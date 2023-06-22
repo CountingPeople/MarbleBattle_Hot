@@ -1,0 +1,189 @@
+<Assets/Bundles/Dll/Assembly-CSharp.dll.bytes|allbundle_assets_bundles_dll_assembly-csharp_dll_bytes.bundle>
+<Assets/Bundles/Dll/BundleMaster.dll.bytes|allbundle_assets_bundles_dll_bundlemaster_dll_bytes.bundle>
+<Assets/Bundles/Dll/mscorlib.dll.bytes|allbundle_assets_bundles_dll_mscorlib_dll_bytes.bundle>
+<Assets/Bundles/Dll/System.Core.dll.bytes|allbundle_assets_bundles_dll_system_core_dll_bytes.bundle>
+<Assets/Bundles/Dll/System.dll.bytes|allbundle_assets_bundles_dll_system_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.AntiAddiction.dll.bytes|allbundle_assets_bundles_dll_taptap_antiaddiction_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.AntiAddiction.Mobile.Runtime.dll.bytes|allbundle_assets_bundles_dll_taptap_antiaddiction_mobile_runtime_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.Bootstrap.Runtime.dll.bytes|allbundle_assets_bundles_dll_taptap_bootstrap_runtime_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.Common.dll.bytes|allbundle_assets_bundles_dll_taptap_common_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.Login.dll.bytes|allbundle_assets_bundles_dll_taptap_login_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.Login.Mobile.Runtime.dll.bytes|allbundle_assets_bundles_dll_taptap_login_mobile_runtime_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.Login.Runtime.dll.bytes|allbundle_assets_bundles_dll_taptap_login_runtime_dll_bytes.bundle>
+<Assets/Bundles/Dll/TapTap.UI.dll.bytes|allbundle_assets_bundles_dll_taptap_ui_dll_bytes.bundle>
+<Assets/Bundles/Prefab/CamRoot.prefab|allbundle_assets_bundles_prefab_camroot_prefab.bundle>
+<Assets/Bundles/Prefab/Lanuch.prefab|allbundle_assets_bundles_prefab_lanuch_prefab.bundle>
+<Assets/Bundles/Prefab/UIBehavLine.prefab|allbundle_assets_bundles_prefab_uibehavline_prefab.bundle>
+<Assets/Bundles/Prefab/UILayer.prefab|allbundle_assets_bundles_prefab_uilayer_prefab.bundle>
+<Assets/Bundles/Prefab/UIRoot.prefab|allbundle_assets_bundles_prefab_uiroot_prefab.bundle>
+<Assets/Bundles/Prefab/UI/Item/UIFlowText.prefab|allbundle_assets_bundles_prefab_ui_item_uiflowtext_prefab.bundle>
+<Assets/Bundles/Prefab/UI/Panel/LoadPanel.prefab|allbundle_assets_bundles_prefab_ui_panel_loadpanel_prefab.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbbrickconfig.bytes|allbundle_assets_bundles_res_datatable_data_tbbrickconfig_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbbrickpool.bytes|allbundle_assets_bundles_res_datatable_data_tbbrickpool_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbglobalconfig.bytes|allbundle_assets_bundles_res_datatable_data_tbglobalconfig_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tblevelconfig.bytes|allbundle_assets_bundles_res_datatable_data_tblevelconfig_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbmonsterconfig.bytes|allbundle_assets_bundles_res_datatable_data_tbmonsterconfig_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbmonsterpool.bytes|allbundle_assets_bundles_res_datatable_data_tbmonsterpool_bytes.bundle>
+<Assets/Bundles/Res/DataTable/Data/tbsoldierconfig.bytes|allbundle_assets_bundles_res_datatable_data_tbsoldierconfig_bytes.bundle>
+<Assets/Bundles/Res/Material/BrickShake.mat|allbundle_assets_bundles_res_material_brickshake_mat.bundle|Assets/Bundles/Res/Material/BrickShake.shadergraph>
+<Assets/Bundles/Res/Material/BrickShake.shadergraph|allbundle_assets_bundles_res_material_brickshake_shadergraph.bundle>
+<Assets/Bundles/Res/Material/Faster_MarbleLine.mat|allbundle_assets_bundles_res_material_faster_marbleline_mat.bundle|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Texture/FX/MarbleLine2.png>
+<Assets/Bundles/Res/Material/Faster_Mesh.mat|allbundle_assets_bundles_res_material_faster_mesh_mat.bundle|Assets/Bundles/Res/Material/StreamMask.shadergraph|Assets/Bundles/Res/Texture/FX/GradientTexture_967090.png|Assets/Bundles/Res/Texture/FX/Particle_Motion_01_Glow.png>
+<Assets/Bundles/Res/Material/Fx_BianBian_FeiJian.mat|allbundle_assets_bundles_res_material_fx_bianbian_feijian_mat.bundle|Assets/Bundles/Res/Texture/FX/kt (1896).png>
+<Assets/Bundles/Res/Material/Fx_BianBian_TanKai.mat|allbundle_assets_bundles_res_material_fx_bianbian_tankai_mat.bundle|Assets/Bundles/Res/Texture/FX/kt (3145).png>
+<Assets/Bundles/Res/Material/Fx_Brick.mat|allbundle_assets_bundles_res_material_fx_brick_mat.bundle>
+<Assets/Bundles/Res/Material/Fx_CatExit_Circle.mat|allbundle_assets_bundles_res_material_fx_catexit_circle_mat.bundle|Assets/Bundles/Res/Texture/FX/kt (65).png>
+<Assets/Bundles/Res/Material/Fx_CatExit_Smoke.mat|allbundle_assets_bundles_res_material_fx_catexit_smoke_mat.bundle|Assets/Bundles/Res/Texture/FX/kt (2798).png>
+<Assets/Bundles/Res/Material/Fx_CatExit_Star.mat|allbundle_assets_bundles_res_material_fx_catexit_star_mat.bundle|Assets/Bundles/Res/Texture/FX/kt (3146).png>
+<Assets/Bundles/Res/Material/Fx_Lines.mat|allbundle_assets_bundles_res_material_fx_lines_mat.bundle|Assets/Bundles/Res/Texture/Marble/Particle.png|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png|Assets/Bundles/Res/Texture/Marble/GuideLine.png>
+<Assets/Bundles/Res/Material/Fx_Stars.mat|allbundle_assets_bundles_res_material_fx_stars_mat.bundle|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png>
+<Assets/Bundles/Res/Material/Fx_YuGuTou.mat|allbundle_assets_bundles_res_material_fx_yugutou_mat.bundle|Assets/Bundles/Res/Texture/Battle/weapon_yuci.png|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png>
+<Assets/Bundles/Res/Material/Fx_YuMao.mat|allbundle_assets_bundles_res_material_fx_yumao_mat.bundle|Assets/Bundles/Res/Texture/FX/羽毛.png>
+<Assets/Bundles/Res/Material/GuideLine.mat|allbundle_assets_bundles_res_material_guideline_mat.bundle|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Texture/Marble/GuideLine.png>
+<Assets/Bundles/Res/Material/LineTrail.mat|allbundle_assets_bundles_res_material_linetrail_mat.bundle|Assets/Bundles/Res/Texture/FX/MarbleLine.png>
+<Assets/Bundles/Res/Material/Marble.mat|allbundle_assets_bundles_res_material_marble_mat.bundle|Assets/Bundles/Res/Texture/Battle/Cloud.png|Assets/Bundles/Res/Material/Marble.shadergraph|Assets/Bundles/Res/Texture/Marble/Marble.png|Assets/Bundles/Res/Texture/FX/Marble 1.png>
+<Assets/Bundles/Res/Material/Marble.shadergraph|allbundle_assets_bundles_res_material_marble_shadergraph.bundle|Assets/Bundles/Res/Texture/Marble/Marble.png|Assets/Bundles/Res/Texture/FX/Marble 1.png>
+<Assets/Bundles/Res/Material/MarbleLine.mat|allbundle_assets_bundles_res_material_marbleline_mat.bundle|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Texture/FX/MarbleLine2.png>
+<Assets/Bundles/Res/Material/MarbleLine2.mat|allbundle_assets_bundles_res_material_marbleline2_mat.bundle|Assets/Bundles/Res/Material/StreamMask.shadergraph|Assets/Bundles/Res/Texture/FX/WipeMask.png|Assets/Bundles/Res/Texture/FX/Rainbow.png>
+<Assets/Bundles/Res/Material/ParticlePot.mat|allbundle_assets_bundles_res_material_particlepot_mat.bundle|Assets/Bundles/Res/Texture/Marble/Particle.png|Assets/Bundles/Res/Texture/FX/MarbleLine.png>
+<Assets/Bundles/Res/Material/Stream.shadergraph|allbundle_assets_bundles_res_material_stream_shadergraph.bundle>
+<Assets/Bundles/Res/Material/StreamMask.shadergraph|allbundle_assets_bundles_res_material_streammask_shadergraph.bundle>
+<Assets/Bundles/Res/Mesh/Wind.FBX|allbundle_assets_bundles_res_mesh_wind_fbx.bundle>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_bianfu_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_bianfu.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu_lv1.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_bianfu_lv1_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_bianfu.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu_lv2.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_bianfu_lv2_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv2.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu_lv3.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_bianfu_lv3_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv3.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu_lv4.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_bianfu_lv4_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv4.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_boss.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_boss_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/Enemy.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_dandinghe_lv1.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_dandinghe_lv1_prefab.bundle|Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv1.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_dandinghe_lv2.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_dandinghe_lv2_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv2.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_dandinghe_lv3.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_dandinghe_lv3_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv3.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_dandinghe_lv4.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_dandinghe_lv4_prefab.bundle|Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv4.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_niao.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_niao_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_niao_1.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_niao_lv1.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_niao_lv1_prefab.bundle|Assets/Bundles/Res/Texture/Battle/enemy_maque_lv1.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_niao_lv2.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_niao_lv2_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_maque_lv2.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_niao_lv3.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_niao_lv3_prefab.bundle|Assets/Bundles/Res/Texture/Battle/enemy_maque_lv3.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/enemy_niao_lv4.prefab|allbundle_assets_bundles_res_prefabs_battle_enemy_niao_lv4_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/enemy_maque_lv4.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_jinjianceng_prefab.bundle|Assets/Bundles/Res/Texture/Battle/PSB/jinjianceng.psb|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng_lv1.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_jinjianceng_lv1_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng_lv2.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_jinjianceng_lv2_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv2.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng_lv3.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_jinjianceng_lv3_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv3.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng_lv4.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_jinjianceng_lv4_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv4.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu _lv1.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_nainiu__lv1_prefab.bundle|Assets/Bundles/Res/Texture/Battle/solider_nainiu.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu _lv2.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_nainiu__lv2_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv2.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu _lv3.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_nainiu__lv3_prefab.bundle|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv3.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu _lv4.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_nainiu__lv4_prefab.bundle|Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv4.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu.prefab|allbundle_assets_bundles_res_prefabs_battle_soldier_nainiu_prefab.bundle|Assets/Bundles/Res/Texture/Battle/solider_nainiu.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png>
+<Assets/Bundles/Res/Prefabs/Battle/UI_SoldierBack.prefab|allbundle_assets_bundles_res_prefabs_battle_ui_soldierback_prefab.bundle|Assets/Bundles/Res/Texture/Battle/UI/soldier_back.png>
+<Assets/Bundles/Res/Prefabs/Battle/weapon_bianbian.prefab|allbundle_assets_bundles_res_prefabs_battle_weapon_bianbian_prefab.bundle|Assets/Bundles/Res/Texture/FX/kt (1896).png|Assets/Bundles/Res/Texture/Battle/weapon_enemy_niaoshi.png|Assets/Bundles/Res/Material/Fx_BianBian_FeiJian.mat|Assets/Bundles/Res/Material/Fx_BianBian_TanKai.mat|Assets/Bundles/Res/Texture/FX/kt (3145).png|Assets/Bundles/Res/Prefabs/Effect/Fx_BianBian.prefab>
+<Assets/Bundles/Res/Prefabs/Battle/weapon_ci.prefab|allbundle_assets_bundles_res_prefabs_battle_weapon_ci_prefab.bundle|Assets/Bundles/Res/Texture/Battle/weapon_ci.png>
+<Assets/Bundles/Res/Prefabs/Battle/weapon_fantuan.prefab|allbundle_assets_bundles_res_prefabs_battle_weapon_fantuan_prefab.bundle|Assets/Bundles/Res/Texture/Battle/weapon_fantuan.png>
+<Assets/Bundles/Res/Prefabs/Battle/weapon_ya.prefab|allbundle_assets_bundles_res_prefabs_battle_weapon_ya_prefab.bundle|Assets/Bundles/Res/Texture/Battle/weapon_enemy_ya.png>
+<Assets/Bundles/Res/Prefabs/Battle/weapon_yuci.prefab|allbundle_assets_bundles_res_prefabs_battle_weapon_yuci_prefab.bundle|Assets/Bundles/Res/Texture/Battle/weapon_yuci.png|Assets/Bundles/Res/Material/Fx_YuGuTou.mat|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png|Assets/Bundles/Res/Prefabs/Effect/Fx_YuGuTou.prefab>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_BianBian.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_bianbian_prefab.bundle|Assets/Bundles/Res/Texture/FX/kt (1896).png|Assets/Bundles/Res/Material/Fx_BianBian_FeiJian.mat|Assets/Bundles/Res/Material/Fx_BianBian_TanKai.mat|Assets/Bundles/Res/Texture/FX/kt (3145).png>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_BrickEffect.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_brickeffect_prefab.bundle|Assets/Bundles/Res/Material/Fx_Brick.mat>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_CatExit.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_catexit_prefab.bundle|Assets/Bundles/Res/Material/Fx_CatExit_Star.mat|Assets/Bundles/Res/Texture/FX/kt (2798).png|Assets/Bundles/Res/Material/Fx_CatExit_Smoke.mat|Assets/Bundles/Res/Texture/FX/kt (3146).png|Assets/Bundles/Res/Texture/FX/kt (65).png|Assets/Bundles/Res/Material/Fx_CatExit_Circle.mat>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_marbletrail_prefab.bundle|Assets/Bundles/Res/Material/StreamMask.shadergraph|Assets/Bundles/Res/Material/Fx_Stars.mat|Assets/Bundles/Res/Material/MarbleLine2.mat|Assets/Bundles/Res/Texture/Marble/Particle.png|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png|Assets/Bundles/Res/Material/MarbleLine.mat|Assets/Bundles/Res/Material/LineTrail.mat|Assets/Bundles/Res/Texture/FX/WipeMask.png|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Material/Fx_Lines.mat|Assets/Bundles/Res/Texture/FX/MarbleLine.png|Assets/Bundles/Res/Texture/Marble/GuideLine.png|Assets/Bundles/Res/Texture/FX/Rainbow.png|Assets/Bundles/Res/Texture/FX/MarbleLine2.png>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail_Faster.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_marbletrail_faster_prefab.bundle|Assets/Bundles/Res/Material/StreamMask.shadergraph|Assets/Bundles/Res/Material/Fx_Stars.mat|Assets/Bundles/Res/Material/MarbleLine2.mat|Assets/Bundles/Res/Mesh/Wind.FBX|Assets/Bundles/Res/Texture/Marble/Particle.png|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png|Assets/Bundles/Res/Texture/FX/GradientTexture_967090.png|Assets/Bundles/Res/Material/Faster_Mesh.mat|Assets/Bundles/Res/Texture/FX/WipeMask.png|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Material/Faster_MarbleLine.mat|Assets/Bundles/Res/Material/Fx_Lines.mat|Assets/Bundles/Res/Texture/Marble/GuideLine.png|Assets/Bundles/Res/Texture/FX/Rainbow.png|Assets/Bundles/Res/Texture/FX/Particle_Motion_01_Glow.png|Assets/Bundles/Res/Texture/FX/MarbleLine2.png>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail_Simple.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_marbletrail_simple_prefab.bundle>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_stars_prefab.bundle|Assets/Bundles/Res/Material/Fx_Stars.mat|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_YuGuTou.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_yugutou_prefab.bundle|Assets/Bundles/Res/Texture/Battle/weapon_yuci.png|Assets/Bundles/Res/Material/Fx_YuGuTou.mat|Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png>
+<Assets/Bundles/Res/Prefabs/Effect/Fx_YuMao.prefab|allbundle_assets_bundles_res_prefabs_effect_fx_yumao_prefab.bundle|Assets/Bundles/Res/Texture/FX/羽毛.png|Assets/Bundles/Res/Material/Fx_YuMao.mat>
+<Assets/Bundles/Res/Prefabs/Marble/Brick.prefab|allbundle_assets_bundles_res_prefabs_marble_brick_prefab.bundle|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset|Assets/Bundles/Res/Texture/Marble/Brick.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset|Assets/ThirdPard/TextMesh Pro/Fonts/LiberationSans.ttf>
+<Assets/Bundles/Res/Prefabs/Marble/BrickTemplate.prefab|allbundle_assets_bundles_res_prefabs_marble_bricktemplate_prefab.bundle|Assets/Bundles/Res/Material/BrickShake.mat|Assets/Bundles/Res/Texture/Marble/BrickIcon/cat_nainiu.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset|Assets/Bundles/Res/Texture/Marble/Brick.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset|Assets/Bundles/Res/Material/BrickShake.shadergraph|Assets/ThirdPard/TextMesh Pro/Fonts/LiberationSans.ttf>
+<Assets/Bundles/Res/Prefabs/Marble/Brick_icon.prefab|allbundle_assets_bundles_res_prefabs_marble_brick_icon_prefab.bundle|Assets/Bundles/Res/Texture/Marble/BrickIcon/cat_nainiu.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset|Assets/Bundles/Res/Texture/Marble/Brick.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset|Assets/ThirdPard/TextMesh Pro/Fonts/LiberationSans.ttf>
+<Assets/Bundles/Res/Prefabs/Marble/Combo.prefab|allbundle_assets_bundles_res_prefabs_marble_combo_prefab.bundle|Assets/Bundles/Res/Texture/Common/UI/Numbers.png>
+<Assets/Bundles/Res/State/Marble/Hole/HoleStateMachine.controller|allbundle_assets_bundles_res_state_marble_hole_holestatemachine_controller.bundle>
+<Assets/Bundles/Res/State/Marble/Marble/MarbleStateMachine.controller|allbundle_assets_bundles_res_state_marble_marble_marblestatemachine_controller.bundle>
+<Assets/Bundles/Res/Texture/Battle/Carnon.psb|allbundle_assets_bundles_res_texture_battle_carnon_psb.bundle>
+<Assets/Bundles/Res/Texture/Battle/Cloud.png|allbundle_assets_bundles_res_texture_battle_cloud_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/Enemy.png|allbundle_assets_bundles_res_texture_battle_enemy_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_bianfu.png|allbundle_assets_bundles_res_texture_battle_enemy_bianfu_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv2.png|allbundle_assets_bundles_res_texture_battle_enemy_bianfu_lv2_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv3.png|allbundle_assets_bundles_res_texture_battle_enemy_bianfu_lv3_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_bianfu_lv4.png|allbundle_assets_bundles_res_texture_battle_enemy_bianfu_lv4_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv1.png|allbundle_assets_bundles_res_texture_battle_enemy_dandinghe_lv1_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv2.png|allbundle_assets_bundles_res_texture_battle_enemy_dandinghe_lv2_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv3.png|allbundle_assets_bundles_res_texture_battle_enemy_dandinghe_lv3_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv4.png|allbundle_assets_bundles_res_texture_battle_enemy_dandinghe_lv4_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_maque_lv1.png|allbundle_assets_bundles_res_texture_battle_enemy_maque_lv1_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_maque_lv2.png|allbundle_assets_bundles_res_texture_battle_enemy_maque_lv2_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_maque_lv3.png|allbundle_assets_bundles_res_texture_battle_enemy_maque_lv3_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_maque_lv4.png|allbundle_assets_bundles_res_texture_battle_enemy_maque_lv4_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_niao_0.png|allbundle_assets_bundles_res_texture_battle_enemy_niao_0_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/enemy_niao_1.png|allbundle_assets_bundles_res_texture_battle_enemy_niao_1_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/Ground.png|allbundle_assets_bundles_res_texture_battle_ground_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/Health.png|allbundle_assets_bundles_res_texture_battle_health_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/HealthBar.png|allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/huapen.png|allbundle_assets_bundles_res_texture_battle_huapen_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/Moutain.png|allbundle_assets_bundles_res_texture_battle_moutain_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/paodan.psb|allbundle_assets_bundles_res_texture_battle_paodan_psb.bundle>
+<Assets/Bundles/Res/Texture/Battle/rock.png|allbundle_assets_bundles_res_texture_battle_rock_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/shibing_rock.psb|allbundle_assets_bundles_res_texture_battle_shibing_rock_psb.bundle>
+<Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng.png|allbundle_assets_bundles_res_texture_battle_soldier_jinjianceng_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv2.png|allbundle_assets_bundles_res_texture_battle_soldier_jinjianceng_lv2_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv3.png|allbundle_assets_bundles_res_texture_battle_soldier_jinjianceng_lv3_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/soldier_jinjianceng_lv4.png|allbundle_assets_bundles_res_texture_battle_soldier_jinjianceng_lv4_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/solider_nainiu.png|allbundle_assets_bundles_res_texture_battle_solider_nainiu_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv2.png|allbundle_assets_bundles_res_texture_battle_solider_nainiu_lv2_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv3.png|allbundle_assets_bundles_res_texture_battle_solider_nainiu_lv3_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/solider_nainiu_lv4.png|allbundle_assets_bundles_res_texture_battle_solider_nainiu_lv4_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/weapon_ci.png|allbundle_assets_bundles_res_texture_battle_weapon_ci_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/weapon_enemy_niaoshi.png|allbundle_assets_bundles_res_texture_battle_weapon_enemy_niaoshi_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/weapon_enemy_ya.png|allbundle_assets_bundles_res_texture_battle_weapon_enemy_ya_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/weapon_fantuan.png|allbundle_assets_bundles_res_texture_battle_weapon_fantuan_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/weapon_yuci.png|allbundle_assets_bundles_res_texture_battle_weapon_yuci_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/xianrenzhang.png|allbundle_assets_bundles_res_texture_battle_xianrenzhang_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/PSB/bianfu.psb|allbundle_assets_bundles_res_texture_battle_psb_bianfu_psb.bundle>
+<Assets/Bundles/Res/Texture/Battle/PSB/jinjianceng.psb|allbundle_assets_bundles_res_texture_battle_psb_jinjianceng_psb.bundle>
+<Assets/Bundles/Res/Texture/Battle/UI/cat_box.png|allbundle_assets_bundles_res_texture_battle_ui_cat_box_png.bundle>
+<Assets/Bundles/Res/Texture/Battle/UI/soldier_back.png|allbundle_assets_bundles_res_texture_battle_ui_soldier_back_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/button.png|allbundle_assets_bundles_res_texture_common_ui_button_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/icon_ku.png|allbundle_assets_bundles_res_texture_common_ui_icon_ku_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/icon_success.png|allbundle_assets_bundles_res_texture_common_ui_icon_success_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/level_back.png|allbundle_assets_bundles_res_texture_common_ui_level_back_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/Numbers.png|allbundle_assets_bundles_res_texture_common_ui_numbers_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/skill_back.png|allbundle_assets_bundles_res_texture_common_ui_skill_back_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/skill_cat_normal.png|allbundle_assets_bundles_res_texture_common_ui_skill_cat_normal_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/skill_cat_normal_levelup.png|allbundle_assets_bundles_res_texture_common_ui_skill_cat_normal_levelup_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/white_back.png|allbundle_assets_bundles_res_texture_common_ui_white_back_png.bundle>
+<Assets/Bundles/Res/Texture/Common/UI/window.png|allbundle_assets_bundles_res_texture_common_ui_window_png.bundle>
+<Assets/Bundles/Res/Texture/FX/GradientTexture_917375.png|allbundle_assets_bundles_res_texture_fx_gradienttexture_917375_png.bundle>
+<Assets/Bundles/Res/Texture/FX/GradientTexture_967090.png|allbundle_assets_bundles_res_texture_fx_gradienttexture_967090_png.bundle>
+<Assets/Bundles/Res/Texture/FX/kt (1896).png|allbundle_assets_bundles_res_texture_fx_kt_(1896)_png.bundle>
+<Assets/Bundles/Res/Texture/FX/kt (2798).png|allbundle_assets_bundles_res_texture_fx_kt_(2798)_png.bundle>
+<Assets/Bundles/Res/Texture/FX/kt (3145).png|allbundle_assets_bundles_res_texture_fx_kt_(3145)_png.bundle>
+<Assets/Bundles/Res/Texture/FX/kt (3146).png|allbundle_assets_bundles_res_texture_fx_kt_(3146)_png.bundle>
+<Assets/Bundles/Res/Texture/FX/kt (65).png|allbundle_assets_bundles_res_texture_fx_kt_(65)_png.bundle>
+<Assets/Bundles/Res/Texture/FX/Marble 1.png|allbundle_assets_bundles_res_texture_fx_marble_1_png.bundle>
+<Assets/Bundles/Res/Texture/FX/MarbleLine.png|allbundle_assets_bundles_res_texture_fx_marbleline_png.bundle>
+<Assets/Bundles/Res/Texture/FX/MarbleLine2.png|allbundle_assets_bundles_res_texture_fx_marbleline2_png.bundle>
+<Assets/Bundles/Res/Texture/FX/MarbleLine3.png|allbundle_assets_bundles_res_texture_fx_marbleline3_png.bundle>
+<Assets/Bundles/Res/Texture/FX/Particle_Motion_01_Glow.png|allbundle_assets_bundles_res_texture_fx_particle_motion_01_glow_png.bundle>
+<Assets/Bundles/Res/Texture/FX/Rainbow.png|allbundle_assets_bundles_res_texture_fx_rainbow_png.bundle>
+<Assets/Bundles/Res/Texture/FX/Tex_Wipe02.png|allbundle_assets_bundles_res_texture_fx_tex_wipe02_png.bundle>
+<Assets/Bundles/Res/Texture/FX/WipeMask.png|allbundle_assets_bundles_res_texture_fx_wipemask_png.bundle>
+<Assets/Bundles/Res/Texture/FX/羽毛.png|allbundle_assets_bundles_res_texture_fx_羽毛_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/BattleBackground.png|allbundle_assets_bundles_res_texture_marble_battlebackground_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/Brick.png|allbundle_assets_bundles_res_texture_marble_brick_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/GuideLine.png|allbundle_assets_bundles_res_texture_marble_guideline_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/Hole.png|allbundle_assets_bundles_res_texture_marble_hole_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/Marble.png|allbundle_assets_bundles_res_texture_marble_marble_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/Narrow.png|allbundle_assets_bundles_res_texture_marble_narrow_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/Particle.png|allbundle_assets_bundles_res_texture_marble_particle_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/BrickIcon/cat_jinjianceng.png|allbundle_assets_bundles_res_texture_marble_brickicon_cat_jinjianceng_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/BrickIcon/cat_nainiu.png|allbundle_assets_bundles_res_texture_marble_brickicon_cat_nainiu_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/BrickIcon/hp.png|allbundle_assets_bundles_res_texture_marble_brickicon_hp_png.bundle>
+<Assets/Bundles/Res/Texture/Marble/BrickIcon/star.png|allbundle_assets_bundles_res_texture_marble_brickicon_star_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/button.png|allbundle_assets_bundles_res_texture_start_ui_button_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/cat.png|allbundle_assets_bundles_res_texture_start_ui_cat_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/shilingtishi.png|allbundle_assets_bundles_res_texture_start_ui_shilingtishi_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/start_background.png|allbundle_assets_bundles_res_texture_start_ui_start_background_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/start_font.png|allbundle_assets_bundles_res_texture_start_ui_start_font_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/youxizhonggao.png|allbundle_assets_bundles_res_texture_start_ui_youxizhonggao_png.bundle>
+<Assets/Bundles/Res/Texture/Start/UI/cat-assets/cat.png|allbundle_assets_bundles_res_texture_start_ui_cat-assets_cat_png.bundle>
+<Assets/Bundles/Scence/Lanuch.unity|allbundle_assets_bundles_scence_lanuch_unity.bundle>
+<Assets/Bundles/Scence/LevelSelect.unity|allbundle_assets_bundles_scence_levelselect_unity.bundle|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset|Assets/Bundles/Res/Texture/Common/UI/level_back.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset|Assets/ThirdPard/TextMesh Pro/Fonts/LiberationSans.ttf>
+<Assets/Bundles/Scence/Main.unity|allbundle_assets_bundles_scence_main_unity.bundle|Assets/Bundles/Res/Texture/Start/UI/cat-assets/cat.png|Assets/Bundles/Res/State/Marble/Marble/MarbleStateMachine.controller|Assets/Bundles/Res/Texture/Common/UI/skill_cat_normal.png|Assets/Bundles/Res/Texture/Common/UI/icon_ku.png|Assets/Bundles/Res/Texture/Common/UI/skill_back.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset|Assets/Bundles/Res/Material/Stream.shadergraph|Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail_Simple.prefab|Assets/Bundles/Res/Texture/Common/UI/button.png|Assets/Bundles/Res/Texture/Marble/GuideLine.png|Assets/Bundles/Res/Texture/Common/UI/white_back.png|Assets/Bundles/Res/Texture/Battle/Ground.png|Assets/Bundles/Res/Texture/Battle/xianrenzhang.png|Assets/Bundles/Res/Texture/Common/UI/icon_success.png|Assets/Bundles/Res/Texture/Battle/HealthBar.png|Assets/Bundles/Res/Texture/Common/UI/skill_cat_normal_levelup.png|Assets/Bundles/Res/Texture/Marble/Narrow.png|Assets/Bundles/Res/State/Marble/Hole/HoleStateMachine.controller|Assets/Bundles/Res/Texture/Battle/Moutain.png|Assets/Bundles/Res/Texture/Marble/Brick.png|Assets/Bundles/Res/Texture/Common/UI/window.png|Assets/Bundles/Res/Texture/Battle/Health.png|Assets/Bundles/Res/Texture/Marble/Hole.png|Assets/Bundles/Res/Texture/Common/UI/level_back.png|Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset|Assets/Bundles/Res/Texture/Marble/Marble.png|Assets/Bundles/Res/Texture/Battle/UI/cat_box.png|Assets/ThirdPard/TextMesh Pro/Fonts/LiberationSans.ttf|Assets/Bundles/Res/Material/GuideLine.mat|Assets/Bundles/Res/Texture/Battle/huapen.png>
+<Assets/Bundles/Scence/Start.unity|allbundle_assets_bundles_scence_start_unity.bundle|Assets/Bundles/Res/Texture/Start/UI/start_font.png|Assets/Bundles/Res/Texture/Start/UI/cat.png|Assets/Bundles/Res/Texture/Start/UI/shilingtishi.png|Assets/Bundles/Res/Texture/Start/UI/button.png|Assets/Bundles/Res/Texture/Start/UI/youxizhonggao.png>
+

@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2535131797
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1488dce6ab5d35adb32cf3174f4bad3b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Bundles/Res/Texture/FX/\u7FBD\u6BDB.png"
+Dependencies: []

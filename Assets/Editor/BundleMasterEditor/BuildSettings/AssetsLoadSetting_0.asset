@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4acba0d04dbe4439552cc1b0163041, type: 3}
+  m_Name: AssetsLoadSetting_0
+  m_EditorClassIdentifier: 
+  BuildName: AllBundle
+  BuildIndex: 1
+  BundleVariant: bundle
+  NameByHash: 0
+  BuildAssetBundleOptions: 768
+  EncryptAssets: 0
+  SecretKey: mister91jiao
+  AssetPath:
+  - Assets/Bundles
+  - Assets/Bundles/Prefab
+  - Assets/Bundles/Dll
+  AssetGroupPaths: []
+  Scene:
+  - {fileID: 102900000, guid: c68119d60d8e44d4d995a7ce8e3f712a, type: 3}
+  - {fileID: 102900000, guid: bd64ed9a8b611114e875cd8462f0f5eb, type: 3}
+  - {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+  - {fileID: 102900000, guid: f0d4bb36de15243938aa0d8375f10074, type: 3}

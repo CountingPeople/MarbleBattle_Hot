@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3602069100
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 02edf9453497efb2bf08d13ea01a6167
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 333e135173ce2edb8d072425abacff21
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 96
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail_Simple.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

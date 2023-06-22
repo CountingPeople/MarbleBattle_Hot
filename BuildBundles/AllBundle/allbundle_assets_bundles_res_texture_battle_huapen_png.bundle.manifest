@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1192922766
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: df2cebf26d28c6b3a8d8c4fc76b72278
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Battle/huapen.png
+Dependencies: []

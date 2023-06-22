@@ -1,0 +1,52 @@
+ManifestFileVersion: 0
+CRC: 2891121643
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1137ecab62df50bf4a5c08017e556cfb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d9b4cc816f281a1f84e4c0efb882397e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ed1ce8e811e7074a86b26606daf8831, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/Bundles/Res/Prefabs/Marble/Brick.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

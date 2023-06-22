@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 273111670
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d1ce99dab707e03d5240eeda60915d4e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Dll/mscorlib.dll.bytes
+Dependencies: []

@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 10283292
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2035edb99ea4f5e7c97f9eff878a8460
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1691380c78352a362b3d0ee6be1f60bc
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 63015b66062f13e498feb91ef50cce1f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/Bundles/Res/Prefabs/Marble/Combo.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_numbers_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

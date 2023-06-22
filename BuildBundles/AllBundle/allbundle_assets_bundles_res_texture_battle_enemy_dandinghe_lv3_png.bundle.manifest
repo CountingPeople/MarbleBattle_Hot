@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1244294059
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a0803be991dc48974188f7b61a65efdd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Battle/enemy_dandinghe_lv3.png
+Dependencies: []

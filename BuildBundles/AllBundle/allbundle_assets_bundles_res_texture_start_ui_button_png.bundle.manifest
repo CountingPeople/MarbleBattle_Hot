@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2819347441
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d52d1ff0564444c5162c17c85a48fd69
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Start/UI/button.png
+Dependencies: []

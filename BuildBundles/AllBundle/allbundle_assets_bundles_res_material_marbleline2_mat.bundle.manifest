@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 2508384049
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 13f2a482f561ebae0a4a922ce6adeeda
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16c36b7b3350fad15821c42f96c32ccb
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Material/MarbleLine2.mat
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_streammask_shadergraph.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_rainbow_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_wipemask_png.bundle

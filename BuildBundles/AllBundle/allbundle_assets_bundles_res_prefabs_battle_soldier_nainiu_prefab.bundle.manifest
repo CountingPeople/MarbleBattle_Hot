@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 3252433727
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4af1124f652ce67c1f8b6ad0610f0520
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3122fed3d68238f1d2f1577dbf971adb
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8262c271b7d99514a88ffec05eee0959, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_solider_nainiu_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

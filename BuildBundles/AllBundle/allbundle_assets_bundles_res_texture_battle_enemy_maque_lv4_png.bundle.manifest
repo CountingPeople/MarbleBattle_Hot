@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 257556510
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e188977bcd48ec1c2520f48f99a214f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Battle/enemy_maque_lv4.png
+Dependencies: []

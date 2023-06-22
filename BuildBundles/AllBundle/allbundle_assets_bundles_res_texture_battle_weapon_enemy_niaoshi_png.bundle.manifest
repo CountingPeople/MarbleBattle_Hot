@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2383226059
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 99fe19c4580a67af410da9c90eadc3ca
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Battle/weapon_enemy_niaoshi.png
+Dependencies: []

@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 2949429129
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3badaa0693121b408225911eb8164d27
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 071cfd7cbbe91ffa08fa7d9635235916
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7b50c0fb60ff94941b8b95042e606be7, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Prefabs/Battle/weapon_yuci.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_yugutou_prefab.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_yuci_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

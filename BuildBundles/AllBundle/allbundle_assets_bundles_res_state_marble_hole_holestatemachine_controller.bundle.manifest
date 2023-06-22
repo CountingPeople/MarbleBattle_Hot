@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 573451238
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d663918747752c73dda988bfe463767b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eb07a0bb94a43a3fb209c8ca65aea843
+HashAppended: 0
+ClassTypes:
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: a3c05276eb7e9bc40a5b997df3bf91a0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/State/Marble/Hole/HoleStateMachine.controller
+Dependencies: []

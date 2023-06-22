@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 15478232
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c86139dce295957ae1ab9d902c058a12
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 912294abf1c8200ded1d22feaad4ad20
+HashAppended: 0
+ClassTypes:
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76150a458efc5e04e8701a0fa4c34a45, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/State/Marble/Marble/MarbleStateMachine.controller
+Dependencies: []

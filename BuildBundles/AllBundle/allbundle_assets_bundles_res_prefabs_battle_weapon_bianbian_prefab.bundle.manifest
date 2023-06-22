@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 541323472
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0752afac0e5091e416db762be259f41e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c916c03835e9c6ab3ae06250bfcbdd5a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: bde213011d0e3fb4c890b923ab2c4ced, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Prefabs/Battle/weapon_bianbian.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_bianbian_prefab.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_niaoshi_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

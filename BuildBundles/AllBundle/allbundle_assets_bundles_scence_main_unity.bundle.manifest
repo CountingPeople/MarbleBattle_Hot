@@ -1,0 +1,148 @@
+ManifestFileVersion: 0
+CRC: 2298835516
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 643d0befde2704f42558e9831ecab64c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9e30d6cae36cd7a6a6cb014d89870029
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 96
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 356069cd5c4948f4e97e086a51a8fa97, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 354f538aee18d6b438a74f3ec46df8e0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 04d3a3ad48fbf834682440ad07c3235f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d29d5f9455f6e1c459e7b426c07331f8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: da2af432ad131c84cbfd8990f3639153, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1671e74d244b91641b1730ec0b1132f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1726677230296fe44ad87db1fa8b4353, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 086e793046a38a640adb43467d41f5fc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 81a9288705da40646ab3366f2894dff2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8f3aacfeb5ed34a3a81fae7d3db9ea6c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76150a458efc5e04e8701a0fa4c34a45, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b67c8d902d9afe84cb25f0a6f5a99b7a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cf26c01e7e8e14d4caa2679db58bae70, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ccd144f77b67aaa4e9c5d16df3ab7301, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a3c05276eb7e9bc40a5b997df3bf91a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f757042c692d84e319131b58edc8d358, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7daae8ce5ac71de499630e866d809622, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ff9c28cba37d2fc499469124469fbad8, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 120
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Scence/Main.unity
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_guideline_mat.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_marbletrail_simple_prefab.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_state_marble_hole_holestatemachine_controller.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_state_marble_marble_marblestatemachine_controller.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_ground_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_health_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_huapen_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_moutain_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_ui_cat_box_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_xianrenzhang_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_button_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_icon_ku_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_icon_success_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_level_back_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_skill_back_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_skill_cat_normal_levelup_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_skill_cat_normal_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_white_back_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_window_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_hole_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_marble_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_narrow_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_start_ui_cat-assets_cat_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

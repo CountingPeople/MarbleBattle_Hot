@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1282181863
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: be75c63191ef02950f30e19903ca1e18
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 08f597f89f45fa40c65bda10a9ee7fe8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ec8da9418a6bf493e93ef4c7b7575847, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Battle/shibing_rock.psb
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

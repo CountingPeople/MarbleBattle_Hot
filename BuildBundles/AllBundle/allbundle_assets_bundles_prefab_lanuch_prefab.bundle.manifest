@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2224254624
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 484197b392900098882c9792258243f3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6c9f4c5f1d819dbdfbf512b94620f3f9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6c5f7189bd96dfe429992123c7200c90, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Prefab/Lanuch.prefab
+Dependencies: []

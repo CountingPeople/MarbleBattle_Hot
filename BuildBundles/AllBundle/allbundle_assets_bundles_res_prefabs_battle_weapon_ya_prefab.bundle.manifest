@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 1639007780
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 26b3e6260b35326c6c4462956aa258d0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9fe2cdda67bb96e73348b04c9b270b48
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: bde213011d0e3fb4c890b923ab2c4ced, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Prefabs/Battle/weapon_ya.prefab
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_ya_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle

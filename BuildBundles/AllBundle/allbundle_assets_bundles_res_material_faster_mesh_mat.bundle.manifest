@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 2455527525
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 53fd5dee503d9b6d4719f252b6132acb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16c36b7b3350fad15821c42f96c32ccb
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Material/Faster_Mesh.mat
+Dependencies:
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_streammask_shadergraph.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_gradienttexture_967090_png.bundle
+- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_particle_motion_01_glow_png.bundle

@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 4126625516
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 551fa5cd8a05e6f2725eec0b6d0770a7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Start/UI/shilingtishi.png
+Dependencies: []

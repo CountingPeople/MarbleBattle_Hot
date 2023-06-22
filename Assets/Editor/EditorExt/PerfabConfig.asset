@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cc310a974463a48bd4fce60eb74ece, type: 3}
+  m_Name: PerfabConfig
+  m_EditorClassIdentifier: 
+  allPerfab:
+  - name: Cube2
+    allPath: Assets/Resources/Cube2.prefab
+    perfabPath: Cube2
+    perfab: {fileID: 8897851435481548619, guid: 66eee8f02890338468cb71eccccb3c06, type: 3}
+  - name: Cube19
+    allPath: Assets/Resources/Cube19.prefab
+    perfabPath: Cube19
+    perfab: {fileID: 8897851435481548619, guid: ecf94e81c0bbcd841bd9477930b62e23, type: 3}
+  - name: Cube11
+    allPath: Assets/Resources/Cube11.prefab
+    perfabPath: Cube11
+    perfab: {fileID: 8897851435481548619, guid: 5b2c8bd21d4be7d4793f0331b7b5d975, type: 3}
+  - name: Cube18
+    allPath: Assets/Resources/Cube18.prefab
+    perfabPath: Cube18
+    perfab: {fileID: 8897851435481548619, guid: 55c676234cf93a3488d164d071fb3e65, type: 3}
+  - name: Cube3
+    allPath: Assets/Resources/Cube3.prefab
+    perfabPath: Cube3
+    perfab: {fileID: 8897851435481548619, guid: f137c0932b98fd74baaa2a58eca76969, type: 3}
+  - name: Cube12
+    allPath: Assets/Resources/Cube12.prefab
+    perfabPath: Cube12
+    perfab: {fileID: 8897851435481548619, guid: 7ff604f4f2a71b14a9c104899461409e, type: 3}
+  - name: Cube13
+    allPath: Assets/Resources/Cube13.prefab
+    perfabPath: Cube13
+    perfab: {fileID: 8897851435481548619, guid: a976fc357a0b8bf419080ab285d037fe, type: 3}
+  - name: Cube20
+    allPath: Assets/Resources/Cube20.prefab
+    perfabPath: Cube20
+    perfab: {fileID: 8897851435481548619, guid: fea1feb5eb7721f46b17936a0e9cf3e7, type: 3}
+  - name: Cube4
+    allPath: Assets/Resources/Cube4.prefab
+    perfabPath: Cube4
+    perfab: {fileID: 8897851435481548619, guid: 8fd3fcb6c4b4b56469c581899419ec2c, type: 3}
+  - name: Cube10
+    allPath: Assets/Resources/Cube10.prefab
+    perfabPath: Cube10
+    perfab: {fileID: 8897851435481548619, guid: 17a3f8d69be5d454ca72196a059690c7, type: 3}
+  - name: Cube14
+    allPath: Assets/Resources/Cube14.prefab
+    perfabPath: Cube14
+    perfab: {fileID: 8897851435481548619, guid: 9ff3ec3701e45294cb1fb56ac3a3e3bd, type: 3}
+  - name: Cube8
+    allPath: Assets/Resources/Cube8.prefab
+    perfabPath: Cube8
+    perfab: {fileID: 8897851435481548619, guid: 68216ce76b0780a42aed0d3b40fb2349, type: 3}
+  - name: Cube15
+    allPath: Assets/Resources/Cube15.prefab
+    perfabPath: Cube15
+    perfab: {fileID: 8897851435481548619, guid: 0b9335884c81f864ba467e54ed8b65e4, type: 3}
+  - name: Cube6
+    allPath: Assets/Resources/Cube6.prefab
+    perfabPath: Cube6
+    perfab: {fileID: 8897851435481548619, guid: 0f182888db277fa4ebbf72259d4bdd66, type: 3}
+  - name: Cube1
+    allPath: Assets/Resources/Cube1.prefab
+    perfabPath: Cube1
+    perfab: {fileID: 8897851435481548619, guid: ca524fe9ada434543bde194f0195d2ae, type: 3}
+  - name: Cube17
+    allPath: Assets/Resources/Cube17.prefab
+    perfabPath: Cube17
+    perfab: {fileID: 8897851435481548619, guid: 8d88b11c1ac9e0441aba6da881f26770, type: 3}
+  - name: Cube7
+    allPath: Assets/Resources/Cube7.prefab
+    perfabPath: Cube7
+    perfab: {fileID: 8897851435481548619, guid: dc73c6dcf0855af4b828f1eb40b39b78, type: 3}
+  - name: Cube16
+    allPath: Assets/Resources/Cube16.prefab
+    perfabPath: Cube16
+    perfab: {fileID: 8897851435481548619, guid: 52a7442e93974e64ea6616651abad4e6, type: 3}
+  - name: Cube5
+    allPath: Assets/Resources/Cube5.prefab
+    perfabPath: Cube5
+    perfab: {fileID: 8897851435481548619, guid: 0e28707ef2cac644d8dc0673102f5801, type: 3}
+  - name: Cube9
+    allPath: Assets/Resources/Cube9.prefab
+    perfabPath: Cube9
+    perfab: {fileID: 8897851435481548619, guid: 5cba6dee9763eb14caa88db300fa1e3c, type: 3}
+  perfabList:
+  - name: Role
+    perfabList:
+    - {fileID: 126924, guid: 7cdb49580f194d249a987888a0f99023, type: 3}
+  - name: FlowText
+    perfabList:
+    - {fileID: 6251837098642949646, guid: 0d925153af9ec0044a0ef91ca1cc9563, type: 3}
+  - name: Bullet
+    perfabList:
+    - {fileID: 1385161154759072, guid: c172b947e9f755041bc815d9ce101b94, type: 3}
+  - name: Buff
+    perfabList:
+    - {fileID: 1488539958773610, guid: b785bbb15fc3a21408f3a095c611725a, type: 3}
+  - name: Blackhole
+    perfabList:
+    - {fileID: 1799343305766756, guid: f1eed821fbceb014da00f1663d02d056, type: 3}
+  - name: explore
+    perfabList:
+    - {fileID: 1144200186513350, guid: 858908c5578e4a34898d9d9bdc19cc6d, type: 3}

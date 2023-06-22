@@ -1,0 +1,24 @@
+﻿//------------------------------------------------------------------------------------------------------------
+//--------------------------------------generate file don't modify--------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+using TMPro;
+using Framework;
+using UnityEngine;
+using UnityEngine.UI;
+
+internal partial class {ClassName} : {Base}
+{
+    public override string UIPath => "{UIPath}";
+
+	#region variable
+
+{Variable}
+    #endregion
+
+    protected override void InitializeElement()
+    {
+        //初始化组件
+
+{BindComponent}
+    }
+}
