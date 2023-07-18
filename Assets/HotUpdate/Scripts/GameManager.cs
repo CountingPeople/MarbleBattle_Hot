@@ -7,7 +7,7 @@ public static class GameManager
 {
     private const string _StartSceneName = "Start";
     private const string _LevelSelectSceneName = "LevelSelect";
-    private const string _GameSceneName = "Main";
+    private const string _GameSceneName = "3DMain";
 
     public enum GameState
     {

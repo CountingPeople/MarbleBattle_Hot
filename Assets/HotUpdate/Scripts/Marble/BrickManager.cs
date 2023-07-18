@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEditor;
 
 public class BrickManager : MonoBehaviour
 {
-    public Vector2 _GridSize;
+    /* Grid config */
+    public Vector3 _GridSize;
     public float _CellSize;
     [Range(0.0f, 0.5f)]
     public float _Padding;
 
+    /* Gizmo */
     public bool _ShowGizmo = false;
     public bool _ShowGrid = false;
 
@@ -44,18 +47,25 @@ public class BrickManager : MonoBehaviour
             get { return mCellSizeWithPadding; }
         }
 
-        public Grid(uint width, uint height, float cellSize, float cellSizeWithPadding)
+        private float mCellHeightWithPadding = 0;
+        public float CellHeightWithPadding
+        {
+            get { return mCellHeightWithPadding; }
+        }
+
+        public Grid(uint width, uint height, float cellSize, float cellSizeWithPadding, float cellHeight)
         {
             mCells = new Cell[width * height];
             for(int y = 0; y < height; ++y)
                 for(int x = 0; x < width; ++x)
                 {
-                    mCells[y * height + x] = new Cell(new Vector2Int(x, y));
+                    mCells[y * width + x] = new Cell(new Vector2Int(x, y));
                 }
             mEmptyEnd = mCells.Length;
 
             mCellSize = cellSize;
             mCellSizeWithPadding = cellSizeWithPadding;
+            mCellHeightWithPadding = cellHeight;
 
             mInnerGridSize = Vector2.zero;
             mInnerGridSize.x = width * mCellSize;
@@ -96,11 +106,13 @@ public class BrickManager : MonoBehaviour
             Vector3 position = Vector3.zero;
 
             Vector3 gridElementStartPosition = Vector3.zero;
+            gridElementStartPosition.y = gridCenter.y;
             gridElementStartPosition.x = gridCenter.x - mInnerGridSize.x / 2.0f + mCellSize / 2.0f;
-            gridElementStartPosition.y = gridCenter.y + mInnerGridSize.y / 2.0f - mCellSize / 2.0f;
+            gridElementStartPosition.z = gridCenter.z + mInnerGridSize.y / 2.0f - mCellSize / 2.0f;
 
             position.x = gridElementStartPosition.x + cell.Coordinate.x * mCellSize;
-            position.y = gridElementStartPosition.y - cell.Coordinate.y * mCellSize;
+            position.y = gridElementStartPosition.y;
+            position.z = gridElementStartPosition.z - cell.Coordinate.y * mCellSize;
 
             return position;
         }
@@ -165,6 +177,7 @@ public class BrickManager : MonoBehaviour
 
     // brick resource
     private cfg.TbBrickConfig mBrickRewardResource = null;
+    private const string _BrickTemplatePath = "Assets/Bundles/Res/Prefabs/Marble/Brick3D.prefab";
     GameObject mBrickRewardResourceTemplate = null;
 
     private static BrickManager mInstance = null;
@@ -180,7 +193,7 @@ public class BrickManager : MonoBehaviour
 
     void Start()
     {
-        mBrickRewardResourceTemplate = ResourcesModule.Instance.Load<GameObject>("Assets/Bundles/Res/Prefabs/Marble/BrickTemplate.prefab");
+        mBrickRewardResourceTemplate = AssetDatabase.LoadAssetAtPath<GameObject>(_BrickTemplatePath);
         mBrickRewardResource = DataManager.DataTable.TbBrickConfig;
 
         GenerateBrickGrid();
@@ -249,9 +262,9 @@ public class BrickManager : MonoBehaviour
         
         // icon
         if(resourceConfig.Icon == "none")
-            brickObject.transform.GetChild(1).gameObject.SetActive(false);
+            brickObject.transform.GetChild(0).gameObject.SetActive(false);
         else
-            brickObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = ResourcesModule.Instance.Load<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
+            brickObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
 
         // number and type
         var brickController = brickObject.GetComponent<BrickController>();
@@ -259,13 +272,15 @@ public class BrickManager : MonoBehaviour
         brickController.BrickType = resourceConfig.BrickRewardType;
         brickController.BrickID = resourceConfig.BrickRewardId;
 
-        // position and scale
+        // position
         Grid.Cell cell = mBrickGrid.TakeOverRandom();
         brickObject.transform.position = mBrickGrid.GetPositionByCell(cell, transform.position);
-        var sr = brickObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
         
-        Vector3 curSize = sr.sprite.bounds.size;
-        brickObject.transform.localScale = new Vector3(mBrickGrid.CellSizeWithPadding / curSize.x, mBrickGrid.CellSizeWithPadding / curSize.y, 1);
+        // scale
+        var renderer = brickObject.transform.GetComponent<Renderer>();
+        
+        Vector3 curSize = renderer.bounds.size;
+        brickObject.transform.localScale = new Vector3(mBrickGrid.CellSizeWithPadding / curSize.x, mBrickGrid.CellHeightWithPadding / curSize.y, mBrickGrid.CellSizeWithPadding / curSize.z);
 
         brickController.BrickCell = cell;
     }
@@ -273,13 +288,12 @@ public class BrickManager : MonoBehaviour
     void GenerateBrickGrid()
     {
         var cellCount = GetCellCount();
-        mBrickGrid = new Grid((uint)cellCount.x, (uint)cellCount.y, _CellSize, GetCellSizeWithPadding());
+        mBrickGrid = new Grid((uint)cellCount.x, (uint)cellCount.y, _CellSize, GetCellSizeWithPadding(), _GridSize.y);
     }
 
     Vector2Int GetCellCount()
     {
-        Vector2 CellSize = new Vector2(_CellSize, _CellSize);
-        Vector2 cellCountFloat = _GridSize / CellSize;
+        Vector2 cellCountFloat = new Vector2(_GridSize.x / _CellSize, _GridSize.z / _CellSize);
         Vector2Int cellCount = new Vector2Int((int)cellCountFloat.x, (int)cellCountFloat.y);
         return cellCount;
     }
@@ -299,16 +313,16 @@ public class BrickManager : MonoBehaviour
 
         Vector2 innerGridSize = (cellCount * CellSize);
 
-        // outter
+        // outter bouding box
         Gizmos.color = Color.yellow;
         Vector3 size = _GridSize;
-        size.z = 1;
         Gizmos.DrawWireCube(transform.position, size);
 
-        // inner
+        // inner bounding box
         Gizmos.color = Color.red;
-        size = cellCount * CellSize;
-        size.z = 1;
+        var innerSize = cellCount * CellSize;
+        size.x = innerSize.x;
+        size.z = innerSize.y;
         Gizmos.DrawWireCube(transform.position, size);
 
         // grid
@@ -318,9 +332,11 @@ public class BrickManager : MonoBehaviour
             Vector3 lineTo = Vector3.zero;
 
             lineFrom.x = transform.position.x - innerGridSize.x / 2.0f;
-            lineFrom.y = transform.position.y + innerGridSize.y / 2.0f;
+            lineFrom.y = transform.position.y;
+            lineFrom.z = transform.position.z + innerGridSize.y / 2.0f;
             lineTo.x = transform.position.x - innerGridSize.x / 2.0f;
-            lineTo.y = transform.position.y - innerGridSize.y / 2.0f;
+            lineTo.y = transform.position.y;
+            lineTo.z = transform.position.z - innerGridSize.y / 2.0f;
 
             Gizmos.color = Color.gray;
             Vector3 step = new Vector3(CellSize.x, 0.0f, 0.0f);
@@ -330,10 +346,10 @@ public class BrickManager : MonoBehaviour
             }
 
             lineFrom.x = transform.position.x - innerGridSize.x / 2.0f;
-            lineFrom.y = transform.position.y + innerGridSize.y / 2.0f;
+            lineFrom.z = transform.position.z + innerGridSize.y / 2.0f;
             lineTo.x = transform.position.x + innerGridSize.x / 2.0f;
-            lineTo.y = transform.position.y + innerGridSize.y / 2.0f;
-            step = new Vector3(0.0f, -CellSize.y, 0.0f);
+            lineTo.z = transform.position.z + innerGridSize.y / 2.0f;
+            step = new Vector3(0.0f, 0.0f, -CellSize.y);
             for (int y = 1; y < cellCount.y; ++y)
             {
                 Gizmos.DrawLine(lineFrom + y * step, lineTo + y * step);
@@ -345,17 +361,21 @@ public class BrickManager : MonoBehaviour
         float gridElementSize = GetCellSizeWithPadding();
         Vector3 gridElementStartPosition = Vector3.zero;
         gridElementStartPosition.x = transform.position.x - innerGridSize.x / 2.0f + _CellSize / 2.0f;
-        gridElementStartPosition.y = transform.position.y + innerGridSize.y / 2.0f - _CellSize / 2.0f;
+        gridElementStartPosition.y = transform.position.y;
+        gridElementStartPosition.z = transform.position.z + innerGridSize.y / 2.0f - _CellSize / 2.0f;
+
         Vector3 gridElementPosition = Vector3.zero;
+        gridElementPosition.y = transform.position.y;
         Vector3 gridElementSizeV3 = Vector3.one;
         gridElementSizeV3.x = gridElementSize;
-        gridElementSizeV3.y = gridElementSize;
+        gridElementSizeV3.y = _GridSize.y;
+        gridElementSizeV3.z = gridElementSize;
         for (int x = 0; x < cellCount.x; ++x)
         {
-            for (int y = 0; y < cellCount.y; ++y)
+            for (int z = 0; z < cellCount.y; ++z)
             {
                 gridElementPosition.x = gridElementStartPosition.x + x * _CellSize;
-                gridElementPosition.y = gridElementStartPosition.y - y * _CellSize;
+                gridElementPosition.z = gridElementStartPosition.z - z * _CellSize;
                 Gizmos.DrawWireCube(gridElementPosition, gridElementSizeV3);
             }
         }

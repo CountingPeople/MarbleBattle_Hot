@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
 public class LaunchArea : IMarbleEntity
 {
     public MarbleController _MarbleController;
-    public SpriteRenderer _SpriteNarrow;
-    public SpriteRenderer _SpriteMarble;
+    public MeshRenderer _SpriteNarrow;
+    public Transform _NarrowRotation;
+    public Transform _NarrowScale;
+    public MeshRenderer _SpriteMarble;
 
-    private CircleCollider2D _ColliderLaunchArea;
+    private SphereCollider _ColliderLaunchArea;
     private float mNarrowDistanceToArea = 0;
-    private Vector2 mLaunchDir = Vector2.zero;
+    private Vector3 mLaunchDir = Vector2.zero;
     private float mNarrowOriScale = 1.0f;
     private float mNarrowDstScale = 1.0f;
 
     // GuideLine
     private LineRenderer mGuideLineRender;
+
+    private Vector3 mMousePositionReady = Vector3.zero;
 
     enum State
     {
@@ -30,14 +33,14 @@ public class LaunchArea : IMarbleEntity
     {
         base.Start();
 
-        _ColliderLaunchArea = GetComponent<CircleCollider2D>();
+        _ColliderLaunchArea = GetComponent<SphereCollider>();
         mGuideLineRender = GetComponent<LineRenderer>();
         mNarrowDistanceToArea = _SpriteNarrow.transform.localPosition.magnitude;
 
         _SpriteNarrow.enabled = false;
         mGuideLineRender.enabled = false;
-        mNarrowOriScale = _SpriteNarrow.transform.localScale.x;
-        mNarrowDstScale = mNarrowOriScale * 1.5f;
+        mNarrowOriScale = _NarrowScale.localScale.x;
+        mNarrowDstScale = mNarrowOriScale * 1.4f;
 
         MarbleEventManager.OnMarbleRevive.AddListener(OnMarbleRevive);
     }
@@ -54,14 +57,14 @@ public class LaunchArea : IMarbleEntity
 
         // first hit point
         // TODO : Optimize this, use layer
-        RaycastHit2D result = Physics2D.RaycastAll(position, dir)[2];
+        RaycastHit result = Physics.RaycastAll(position, dir)[0];
 
         mGuideLineRender.SetPosition(1, transform.worldToLocalMatrix.MultiplyPoint(result.point));
 
         // second hit point
-        var reflectDir = Vector2.Reflect((result.point - (Vector2)position).normalized, result.normal);
+        var reflectDir = Vector3.Reflect((result.point - position).normalized, result.normal);
         
-        result = Physics2D.Raycast(result.point + reflectDir * 0.005f, reflectDir);
+        Physics.Raycast(result.point + reflectDir * 0.005f, reflectDir, out result);
 
         mGuideLineRender.SetPosition(2, transform.worldToLocalMatrix.MultiplyPoint((Vector3)result.point));
 
@@ -81,13 +84,14 @@ public class LaunchArea : IMarbleEntity
             if (!Input.GetMouseButtonDown(0))
                 return;
 
-            Vector2 hitPosition = Vector2.zero;
-            var hitResult = MarbleUtility.isHit(ref hitPosition, _ColliderLaunchArea);
-
+            Vector3 hitPosition = Vector2.zero;
+            var hitResult = MarbleUtility.isHit(ref hitPosition, _ColliderLaunchArea, LayerMask.GetMask("LaunchArea"));
+            
             if (!hitResult)
                 return;
 
             mState = State.Launching;
+            mMousePositionReady = Input.mousePosition;
         }
 
         if(mState == State.Launching)
@@ -98,29 +102,30 @@ public class LaunchArea : IMarbleEntity
                 _SpriteNarrow.enabled = true;
                 mGuideLineRender.enabled = true;
 
-                var mousePositionInWorld = MarbleGameManager.Instance.CameraMarbleGame.ScreenToWorldPoint(Input.mousePosition);
-
-                
-
-                var dirWithoutNormalize = (Vector2)(mousePositionInWorld - transform.position);
+                // .(mouseReady) ---- .(now)->
+                // in screen space
+                var dirWithoutNormalize = (Input.mousePosition - mMousePositionReady);
                 var len = dirWithoutNormalize.magnitude;
+                var dirWithNormalize = (dirWithoutNormalize).normalized;
+                
+                // map to world space
+                mLaunchDir = new Vector3(dirWithNormalize.x, 0.0f, dirWithNormalize.y);
 
-                mLaunchDir = (dirWithoutNormalize).normalized;
+                // DrawGuideLine(transform.position, mLaunchDir);
 
-                DrawGuideLine(transform.position, mLaunchDir);
+                // narrow's rotation
+                float angle = Mathf.Acos(mLaunchDir.x) * Mathf.Rad2Deg * -Mathf.Sign(mLaunchDir.z);
+                var localAngle = _NarrowRotation.localEulerAngles;
+                localAngle.y = angle;
+                _NarrowRotation.localEulerAngles = localAngle;
 
-                float angle = Mathf.Acos(mLaunchDir.x) * Mathf.Rad2Deg * Mathf.Sign(mLaunchDir.y);
-                var localAngle = _SpriteNarrow.transform.localEulerAngles;
-                localAngle.z = angle;
-                _SpriteNarrow.transform.localEulerAngles = localAngle;
+                // _SpriteNarrow.transform.localPosition = mLaunchDir * mNarrowDistanceToArea;
 
-                _SpriteNarrow.transform.localPosition = mLaunchDir * mNarrowDistanceToArea;
-
-                // scale
-                float scale = Mathf.Lerp(mNarrowOriScale, mNarrowDstScale, Mathf.Clamp01((len - _SpriteMarble.bounds.extents.x) / (_ColliderLaunchArea.radius - _SpriteMarble.bounds.extents.x)));
+                // narrow's scale
+                float scale = Mathf.Lerp(mNarrowOriScale, mNarrowDstScale, Mathf.Clamp01(len / 300));
                 var transformScale = _SpriteNarrow.transform.localScale;
                 transformScale.x = scale;
-                _SpriteNarrow.transform.localScale = transformScale;
+                _NarrowScale.localScale = transformScale;
             }
             else
             {

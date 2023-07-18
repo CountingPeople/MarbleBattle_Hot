@@ -4,6 +4,7 @@ using System.IO;
 using Bright.Serialization;
 using Framework;
 using UnityEngine;
+using UnityEditor;
 
 // Data Table manager
 // use Luban for export data table
@@ -34,9 +35,9 @@ public static class DataManager
     private static ByteBuf LoadByteBuf(string file)
     {
         string dataFilePath = $"{_DataDir}/{file}";
-        //return new ByteBuf(Resources.Load<TextAsset>(dataFilePath).bytes);
-        var bytes = ResourcesModule.Instance.Load<TextAsset>($"{dataFilePath}.bytes").bytes;
-        return new ByteBuf(bytes);
+        return new ByteBuf(AssetDatabase.LoadAssetAtPath<TextAsset>($"{dataFilePath}.bytes").bytes);
+        // var bytes = ResourcesModule.Instance.Load<TextAsset>($"{dataFilePath}.bytes").bytes;
+        // return new ByteBuf(bytes);
     }
 
     static void Destory()

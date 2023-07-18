@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Framework;
+using UnityEditor;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class BrickController : MonoBehaviour
 {
     private Color StartColor;
     public Color EndColor;
     
-    private SpriteRenderer mSpriteBrick;
     private TextMeshPro mTextNumber;
     private Animator mAnimator;
 
@@ -57,7 +56,7 @@ public class BrickController : MonoBehaviour
         {
             mCurLife = value;
 
-            mSpriteBrick.color = Color.Lerp(EndColor, StartColor, (float)Mathf.Max(CurLife - 1, 0) / (float)(mLife));
+            // mTextNumber.color = Color.Lerp(EndColor, StartColor, (float)Mathf.Max(CurLife - 1, 0) / (float)(mLife));
             mTextNumber.text = mCurLife.ToString();
         }
     }
@@ -66,14 +65,12 @@ public class BrickController : MonoBehaviour
 
     void Awake()
     {
-        mSpriteBrick = GetComponent<SpriteRenderer>();
-        StartColor = mSpriteBrick.color;
-
         mTextNumber = GetComponentInChildren<TextMeshPro>();
-
         mAnimator = GetComponent<Animator>();
 
-        mEffectTemplate = ResourcesModule.Instance.Load<GameObject>("Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab");
+        mEffectTemplate = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab");
+
+        StartColor = mTextNumber.color;
     }
 
     private void OnDestroy()

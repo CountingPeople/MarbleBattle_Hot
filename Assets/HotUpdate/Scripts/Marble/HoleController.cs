@@ -9,13 +9,13 @@ public class HoleController : IMarbleEntity
     MarbleController mMarbleController;
     float mOldVelocity = 0;
 
-    CircleCollider2D mCollider = null;
+    Collider mCollider = null;
 
     private void Awake()
     {
         mRender = GetComponent<SpriteRenderer>();
         mAnimator = GetComponent<Animator>();
-        mCollider = GetComponent<CircleCollider2D>();
+        mCollider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class HoleController : IMarbleEntity
         if (!Input.GetMouseButtonDown(0))
             return;
 
-        Vector2 hitPosition = Vector2.zero;
+        Vector3 hitPosition = Vector2.zero;
         var hitResult = MarbleUtility.isHit(ref hitPosition, mCollider);
         if (!hitResult)
             return;

@@ -81,7 +81,7 @@ public class MarbleGameManager
         if (GameState != MarbleGameState.Gaming)
             return;
 
-        BrickManager.Instance.Tick();
+        // BrickManager.Instance.Tick();
 
         // tick every entity
         for (int i = 0; i < mTickItem.Count; ++i)
@@ -112,13 +112,13 @@ public class MarbleGameManager
 
 public static class MarbleUtility
 {
-    public static bool isHit(ref Vector2 hitPosition, Collider2D collider)
+    public static bool isHit(ref Vector3 hitPosition, Collider collider, int layer = ~0)
     {
-        RaycastHit2D[] result = null;
+        RaycastHit[] result = null;
         int hitIndex = -1;
 
         Ray ray = MarbleGameManager.Instance.CameraMarbleGame.ScreenPointToRay(Input.mousePosition);
-        result = Physics2D.RaycastAll(ray.origin, ray.direction);
+        result = Physics.RaycastAll(ray.origin, ray.direction, Mathf.Infinity, layer);
         if (result.Length == 0)
             return false;
 

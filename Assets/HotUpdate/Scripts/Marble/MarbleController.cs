@@ -5,25 +5,23 @@ using UnityEngine;
 public class MarbleController : IMarbleEntity
 {
     public float _Velocity = 0.5f;
-    private float mInitVelocity = 0;
     
-    private Vector2 mVelocityDir;
+    private Vector3 mVelocityDir;
     private Vector3 mInitPosition;
     public Vector3 InitPosition { get { return mInitPosition; } }
 
     private Animator mAnimator;
     public AnimationCurve _ReviveCurve;
 
-    public void Launch(Vector2 launchDir)
+    public void Launch(Vector3 launchDir)
     {
-        _Velocity = mInitVelocity;
         mVelocityDir = launchDir;
     }
 
-    private Vector2 Collide(Vector2 point)
+    private Vector3 Collide(Vector3 point)
     {
-        var normal = ((Vector2)transform.position - point).normalized;
-        mVelocityDir = Vector2.Reflect(mVelocityDir, normal);
+        var normal = (transform.position - point).normalized;
+        mVelocityDir = Vector3.Reflect(mVelocityDir, normal);
         return normal;
     }
 
@@ -32,7 +30,6 @@ public class MarbleController : IMarbleEntity
         base.Start();
 
         mInitPosition = transform.localPosition;
-        mInitVelocity = _Velocity;
 
         mVelocityDir = Vector2.zero;
 
@@ -60,7 +57,7 @@ public class MarbleController : IMarbleEntity
 
     // TODO: use CCD
     // TODO: use ColliderMask
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
         // TODO: use enum type
         BrickController brickController = collision.gameObject.GetComponent<BrickController>();
@@ -69,7 +66,8 @@ public class MarbleController : IMarbleEntity
         if (!brickController && !wallController)
             return;
 
-        Vector2 collidePoint = collision.contacts[0].point;
+        Vector3 collidePoint = collision.contacts[0].point;
+        collidePoint.y = transform.position.y;
         var normal = Collide(collidePoint);
 
         if (brickController)
