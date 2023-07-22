@@ -8,7 +8,7 @@ using UnityEditor;
 public class BrickController : MonoBehaviour
 {
     private Color StartColor;
-    public Color EndColor;
+    private Color EndColor; // TODO: no use in 3D, del it ? @zhangrufu
     
     private TextMeshPro mTextNumber;
     private Animator mAnimator;
@@ -66,7 +66,7 @@ public class BrickController : MonoBehaviour
     void Awake()
     {
         mTextNumber = GetComponentInChildren<TextMeshPro>();
-        mAnimator = GetComponent<Animator>();
+        mAnimator = GetComponentInChildren<Animator>();
 
         mEffectTemplate = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab");
 

@@ -255,30 +255,35 @@ public class BrickManager : MonoBehaviour
         var brick = mBrickSpawner.Spawn();
 
         GameObject brickObject = GameObject.Instantiate<GameObject>(mBrickRewardResourceTemplate);
-        brickObject.transform.SetParent(transform.parent);
+        brickObject.transform.SetParent(transform);
 
         // assemble brick object
         var resourceConfig = mBrickRewardResource.Get(brick.BrickID);
         
         // icon
+        /* - Brick3D
+         *      -Box
+         *          -Cat
+         *          -Number
+        */
+
         if(resourceConfig.Icon == "none")
-            brickObject.transform.GetChild(0).gameObject.SetActive(false);
+            brickObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         else
-            brickObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
+            brickObject.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
 
         // number and type
         var brickController = brickObject.GetComponent<BrickController>();
         brickController.Life = Random.Range(brick.HPMin, brick.HPMax + 1);
         brickController.BrickType = resourceConfig.BrickRewardType;
         brickController.BrickID = resourceConfig.BrickRewardId;
-
+        
         // position
         Grid.Cell cell = mBrickGrid.TakeOverRandom();
         brickObject.transform.position = mBrickGrid.GetPositionByCell(cell, transform.position);
         
         // scale
-        var renderer = brickObject.transform.GetComponent<Renderer>();
-        
+        var renderer = brickObject.transform.GetChild(0).GetComponent<Renderer>();
         Vector3 curSize = renderer.bounds.size;
         brickObject.transform.localScale = new Vector3(mBrickGrid.CellSizeWithPadding / curSize.x, mBrickGrid.CellHeightWithPadding / curSize.y, mBrickGrid.CellSizeWithPadding / curSize.z);
 
