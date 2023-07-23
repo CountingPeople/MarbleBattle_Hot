@@ -12,24 +12,24 @@ public class GameTicker : MonoBehaviour
     {
         LevelManager.Init();
         MarbleGameManager.Init(_CameraMarbleGame);
-        // BattleGameManager.Init(_MonsterParent);
+        BattleGameManager.Init(_MonsterParent);
     }
 
     void Update()
     {
         MarbleGameManager.Instance.Tick(Time.deltaTime);
-        // BattleGameManager.Tick(Time.deltaTime);
+        BattleGameManager.Tick(Time.deltaTime);
         LevelManager.Instance.Tick(Time.deltaTime);
     }
 
     private void LateUpdate()
     {
-        // BattleGameManager.LateTick();
+        BattleGameManager.LateTick();
     }
 
     private void OnDestroy()
     {
         MarbleGameManager.Destory();
-        // BattleGameManager.Destory();
+        BattleGameManager.Destory();
     }
 }

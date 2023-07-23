@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6329534743078803169}
   - component: {fileID: 451032701961675119}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HPBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5955066729095163713}
   - component: {fileID: 7944963842534253968}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2308561347336063439}
   - component: {fileID: 804784829593582668}
   - component: {fileID: 8841060784309900660}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: soldier_jinjianceng_lv3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _FireCD: 2
   _ShotVelocity: 8
-  _BulletScale: 1
   _HPMax: 10
   _HP: {fileID: 5955066729095163713}
   _TargetT: 0.5
@@ -271,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2650275578333193855}
   - component: {fileID: 207926672927214681}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

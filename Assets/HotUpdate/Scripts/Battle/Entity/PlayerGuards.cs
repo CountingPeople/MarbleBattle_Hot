@@ -2,6 +2,7 @@ using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerGuards : IBattleEntity
 {
@@ -64,7 +65,7 @@ public class PlayerGuards : IBattleEntity
         base.Start();
 
         CurHP = _HPMax;
-        mWeapon = ResourcesModule.Instance.Load<GameObject>("Assets/Bundles/Res/Prefabs/Battle/weapon_yuci.prefab");
+        mWeapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Battle/weapon_yuci.prefab");
         mFireTimer = _FireCD;
     }
 

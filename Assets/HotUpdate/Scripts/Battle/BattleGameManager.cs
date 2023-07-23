@@ -174,6 +174,7 @@ public static class BattleGameManager
     
 }
 
+// TODO: refactor this
 class CameraManager
 {
     private Camera mBattleCamera;
@@ -182,7 +183,7 @@ class CameraManager
         get { return mBattleCamera; }
         set { mBattleCamera = value; }
     }
-    const string mBattleCameraName = "BattleGameCamera";
+    const string mBattleCameraName = "BattleCamera";
 
     static public CameraManager Instance = null;
 

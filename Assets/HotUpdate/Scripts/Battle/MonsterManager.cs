@@ -2,6 +2,7 @@ using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 class MonsterManager
 {
@@ -91,7 +92,7 @@ class MonsterManager
         foreach(var data in dataList)
         {
             string resPath = resPathBase + data.Res+".prefab";
-            GameObject template = ResourcesModule.Instance.Load<GameObject>(resPath);
+            GameObject template = AssetDatabase.LoadAssetAtPath<GameObject>(resPath);
             Debug.Assert(template != null, "Monster prefab is null");
 
             mMonsterTemplate.Add(data.ID, template);

@@ -18,9 +18,10 @@ public class GridLayout
             Coordinate = coord;
 
             mItem = GameObject.Instantiate<GameObject>(cellBackTemplate);
-            mItem.transform.position = Vector3.zero;
-            mItem.transform.localScale = Vector3.one;
             mItem.transform.SetParent(layouter, false);
+
+            mItem.transform.localPosition = Vector3.zero;
+            mItem.transform.localScale = Vector3.one;
         }
 
         public void Reset()
@@ -206,6 +207,7 @@ public class GridLayout
 
         position.x = gridElementStartPosition.x + cell.Coordinate.x * mCellSizeWithPaddingInWS + mCellSizeWithPaddingInWS / 2.0f;
         position.y = gridElementStartPosition.y - cell.Coordinate.y * mCellSizeWithPaddingInWS;
+        position.z = gridCenter.z;
 
         // for interleaved offset
         var levelFactor = (level % 2);
