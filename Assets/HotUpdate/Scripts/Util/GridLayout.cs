@@ -84,6 +84,7 @@ public class GridLayout
             for (int x = 0; x < mCellCountX; ++x)
             {
                 Cell curCell = new Cell(new Vector2Int(x, y), mLayouter, mCellBackground);
+
                 // adopt GameObject's localscale to match Cell size
                 curCell.mItem.transform.position = GetPositionByCell(curCell, mLayouter.position, index);
                 curCell.mItem.transform.localScale = GetScaleByCell(Vector3.one);
@@ -242,18 +243,18 @@ public class GridLayout
 
         for(int i = 0; i < refreshCount; ++i)
         {
+            // get a cell
             var targetCell = TakeOverByOrder();
-
             Debug.Assert(targetCell.Cell != null);
 
+            // init this instance
             GameObject curInstance = toBeLayoutInstance[i];
             curInstance.transform.SetParent(null, false);
-
             
             var bodyRender = curInstance.GetComponent<PlayerGuards>().BodyRenderer;
-
             targetCell.Cell.mItem.transform.localScale = GetScaleByCell(bodyRender.bounds.size);
 
+            // place in cell
             curInstance.transform.SetParent(targetCell.Cell.mItem.transform, false);
         }
         
