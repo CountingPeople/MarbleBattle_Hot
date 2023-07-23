@@ -98,10 +98,12 @@ public class SoldierQueue : MonoBehaviour
         // for center aligned
         Vector2 innerGridSize = (cellCount * CellSizeWithPadding);
 
+        const float _SizeZ = 0.1f;
+
         // outter
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.red;
         Vector3 size = _GridSize;
-        size.z = 1;
+        size.z = _SizeZ;
         Gizmos.DrawWireCube(transform.position, size);
 
         // grid element
@@ -109,16 +111,19 @@ public class SoldierQueue : MonoBehaviour
         Vector3 gridElementStartPosition = Vector3.zero;
         gridElementStartPosition.x = transform.position.x - innerGridSize.x / 2.0f;
         gridElementStartPosition.y = transform.position.y;
+        gridElementStartPosition.z = transform.position.z;
         Vector3 gridElementPosition = Vector3.zero;
         Vector3 gridElementSizeV3 = Vector3.one;
         gridElementSizeV3.x = _CellSize;
         gridElementSizeV3.y = _CellSize;
+        gridElementSizeV3.z = _SizeZ;
 
-        
+
         for (int x = 0; x < cellCount; ++x)
         {
             gridElementPosition.x = gridElementStartPosition.x + x * cellSizeWithPadding + cellSizeWithPadding / 2.0f;
             gridElementPosition.y = gridElementStartPosition.y;
+            gridElementPosition.z = gridElementStartPosition.z;
 
             Gizmos.DrawWireCube(gridElementPosition, gridElementSizeV3);
         }
