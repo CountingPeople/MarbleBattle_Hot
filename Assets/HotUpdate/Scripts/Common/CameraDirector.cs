@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using Lean.Touch;
+using Lean.Common;
 
 public class CameraDirector : MonoBehaviour
 {
@@ -34,7 +35,20 @@ public class CameraDirector : MonoBehaviour
 		// Get the fingers we want to use
 		var fingers = Use.UpdateAndGetFingers();
 
-		float screenDelta = LeanGesture.GetScreenDelta(fingers).y * _Sensitivity * 0.001f;
+        if (fingers.Count != 1)
+            return;
+
+        var finger = fingers[0];
+        if (finger.IsOverGui)
+            return;
+
+        foreach (var select in LeanSelect.Instances)
+        {
+            if (select.Selectables.Count > 0)
+                return;
+        }
+
+        float screenDelta = LeanGesture.GetScreenDelta(fingers).y * _Sensitivity * 0.001f;
         mDirectorFactor += -screenDelta;
         mDirectorFactor = Mathf.Clamp01(mDirectorFactor);
 

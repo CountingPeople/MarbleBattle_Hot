@@ -11,6 +11,7 @@ public class GameTicker : MonoBehaviour
     private void Awake()
     {
         LevelManager.Init();
+        CameraManager.Init();
         MarbleGameManager.Init(_CameraMarbleGame);
         BattleGameManager.Init(_MonsterParent);
     }
@@ -31,5 +32,6 @@ public class GameTicker : MonoBehaviour
     {
         MarbleGameManager.Destory();
         BattleGameManager.Destory();
+        CameraManager.Destory();
     }
 }

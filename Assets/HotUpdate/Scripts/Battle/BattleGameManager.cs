@@ -76,7 +76,6 @@ public static class BattleGameManager
         mTickItem = new List<IBattleEntity>();
         mNeedDestory = false;
 
-        CameraManager.Init();
         MonsterManager.Init(enemyParent);
 
         mPlayer = new Battle.Player();
@@ -97,7 +96,6 @@ public static class BattleGameManager
         if(mTickItem.Count == 0)
             mTickItem = null;
 
-        CameraManager.Destory();
         MonsterManager.Destory();
     }
 
@@ -172,49 +170,4 @@ public static class BattleGameManager
         GameState = BattleGameState.Gaming;
     }
     
-}
-
-// TODO: refactor this
-class CameraManager
-{
-    private Camera mBattleCamera;
-    public Camera BattleCamera
-    {
-        get { return mBattleCamera; }
-        set { mBattleCamera = value; }
-    }
-    const string mBattleCameraName = "BattleCamera";
-
-    static public CameraManager Instance = null;
-
-    CameraManager()
-    {
-        var cameras = Camera.allCameras;
-        foreach(var curCam in cameras)
-        {
-            if (curCam.name == mBattleCameraName)
-            {
-                mBattleCamera = curCam;
-                break;
-            }
-        }
-
-        //Check
-#if UNITY_EDITOR
-        Debug.Assert(mBattleCamera != null);
-#endif
-    }
-
-    public static void Init()
-    {
-#if UNITY_EDITOR
-        Debug.Assert(Instance == null);
-#endif
-        Instance = new CameraManager();
-    }
-
-    public static void Destory()
-    {
-        Instance = null;
-    }
 }

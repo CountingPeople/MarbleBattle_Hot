@@ -9,6 +9,4 @@ public static class BattleEventManager
 
     public static UnityEvent<float> OnPlayerHPChanged = new UnityEvent<float>();
     public static UnityEvent OnPlayerDead = new UnityEvent();
-
-    public static UnityEvent<GameObject> OnSoldierDrop = new UnityEvent<GameObject>();
 }
