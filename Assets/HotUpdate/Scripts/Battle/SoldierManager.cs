@@ -13,6 +13,9 @@ public class SoldierManager : MonoBehaviour
 
     static public SoldierManager Instance = null;
 
+    // soldier's size
+    public Vector2 _SoldierSize = Vector2.one;
+
     private void Awake()
     {
         Instance = this;
@@ -60,10 +63,37 @@ public class SoldierManager : MonoBehaviour
         if (!canDrop)
             return canDrop;
 
+        // can drop
+        //
         _Queue.Extract(instance);
 
-        instance.transform.SetParent(transform.parent, true);
+        instance.transform.SetParent(transform, false);
+
+        var positionInMarble = transform.transform.position;
+
+        instance.transform.position = instancePositionInBattle;
+        instance.transform.localRotation = Quaternion.Euler(Vector3.zero);
+
+        // scale
+        // i think this code could be more elegant
+        var renderer = instance.GetComponent<PlayerGuards>().BodyRenderer;
+        var renderBoundsSize = renderer.bounds.size;
+
+        var sizeFactorX = _SoldierSize.x / renderBoundsSize.x;
+        var sizeFactorY = _SoldierSize.y / renderBoundsSize.y;
+
+        var localScale = instance.transform.localScale;
+        localScale.x *= sizeFactorX;
+        localScale.y *= sizeFactorY;
+        instance.transform.localScale = localScale;
 
         return true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 size = _SoldierSize;
+        size.z = 0.1f;
+        Gizmos.DrawWireCube(transform.position, size);
     }
 }

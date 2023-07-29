@@ -11,6 +11,8 @@ public class PlayerGuardDragable : MonoBehaviour
     private LeanSelectableByFinger mLeanSelectable;
     bool mIsHold = false;
 
+    private Vector3 mPositionInQueue = Vector3.zero;
+
     private void Awake()
     {
         mSoldierInstance = GetComponent<PlayerGuards>();
@@ -29,6 +31,8 @@ public class PlayerGuardDragable : MonoBehaviour
         p3.z = -CameraManager.Instance.MarbleCamera.worldToCameraMatrix.MultiplyPoint(transform.position).z;
         mDragPosition = CameraManager.Instance.MarbleCamera.ScreenToWorldPoint(p3);
 
+        mPositionInQueue = transform.localPosition;
+
         mIsHold = true;
     }
 
@@ -43,6 +47,14 @@ public class PlayerGuardDragable : MonoBehaviour
 
             Destroy(this);
             Destroy(mLeanSelectable);
+        }
+        else
+        {
+            // move to queue
+            // TODO: animation @zhangrufu
+            transform.localPosition = mPositionInQueue;
+            mPositionInQueue = Vector3.zero;
+
         }
 
         mIsHold = false;
