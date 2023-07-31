@@ -61,28 +61,23 @@ public class EnemySpikeShooter : IBattleEntity
     {
         // position logic
         Bounds curBounds = _SpriteRenderer.bounds;
-        Vector3 border = curBounds.center;
-        border.x += mMoveDir.x * curBounds.extents.x;
+        
+        var deltaPosition = mMoveDir * mMoveSpeed * Time.deltaTime;
+        Vector3 targetPosition = transform.position + deltaPosition;
+        curBounds.center = targetPosition;
 
-        // TODO: cache this
-        var battleCamera = CameraManager.Instance.BattleCamera;
-        Vector2 viewport = new Vector2(0, battleCamera.orthographicSize * 2);
-        viewport.x = viewport.y * battleCamera.aspect;
+        var areaBound = MonsterManager.Instance.AreaBound;
+        var maxGap = Vector3.Min(areaBound.max - curBounds.max, Vector3.zero);
+        var minGap = Vector3.Max(areaBound.min - curBounds.min, Vector3.zero);
+        var Gap = (maxGap + minGap);
 
-        float viewportBorder = viewport.x / 2.0f;
-
-        var deltaPosition = Vector3.zero;
-
-        float gap = viewportBorder - Mathf.Abs(border.x);
-        if(gap <= 0)
-        {
-            float correctDis = Mathf.Abs(gap) + 0.0001f;
+        if (Gap[0] != 0)
             mMoveDir.x *= -1;
+        if (Gap[1] != 0)
+            mMoveDir.y *= -1;
 
-            deltaPosition.x += mMoveDir.x * correctDis;
-        }
-
-        deltaPosition.x += mMoveDir.x * mMoveSpeed * Time.deltaTime;
+        targetPosition += Gap;
+        deltaPosition = targetPosition - transform.position;
         transform.Translate(deltaPosition);
 
         // shot logic

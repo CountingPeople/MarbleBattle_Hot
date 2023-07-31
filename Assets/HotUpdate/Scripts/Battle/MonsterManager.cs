@@ -9,7 +9,13 @@ class MonsterManager
     static public MonsterManager Instance = null;
 
     private List<GameObject> mEnemyList = new List<GameObject>();
-    public float _EnemySpawnSize = 0.5f;    // TODO: read from config @zhangrufu
+    private Vector2 mMonsterAreaSize = Vector2.one;
+    private Vector2 mMonsterAreaAnchor = Vector2.zero;
+    private Bounds mMonsterAreaBound;
+    public Bounds AreaBound
+    {
+        get { return mMonsterAreaBound; }
+    }
 
     public List<GameObject> Enemies
     {
@@ -100,6 +106,14 @@ class MonsterManager
 
         mEnemyParent = enemyParent;
 
+        // area size
+        var areaDef = mEnemyParent.gameObject.GetComponent<MonsterAreaGizmo>();
+        Debug.Assert(areaDef != null);
+
+        mMonsterAreaSize = areaDef._MonsterAreaSize;
+        mMonsterAreaAnchor = -mMonsterAreaSize / 2.0f;
+        mMonsterAreaBound = new Bounds(mEnemyParent.position, mMonsterAreaSize);
+
         // level monter logic
         OnLevelAdvanced();
         SpawnEnemy();
@@ -129,6 +143,7 @@ class MonsterManager
         Debug.Assert(Instance == null);
         Debug.Assert(CameraManager.Instance != null);
 #endif
+
         Instance = new MonsterManager(enemyParent);
     }
 
@@ -155,26 +170,16 @@ class MonsterManager
             GameObject template = mMonsterTemplate[monsterID];
             GameObject monsterObject = GameObject.Instantiate<GameObject>(template);
 
-            // TODO: config area
             // position
             Vector2 targetPosition = Vector3.zero;
             var rendererComp = monsterObject.GetComponent<SpriteRenderer>();
             var enemySize = rendererComp.bounds.size;
             var enemyExtent = rendererComp.bounds.extents;
 
-            // TODO: cache viewport size @zhangrufu
-            var battleCamera = CameraManager.Instance.BattleCamera;
-            Vector2 viewport = new Vector2(0, battleCamera.orthographicSize * 2);
-            viewport.x = viewport.y * battleCamera.aspect;
-            viewport.y *= _EnemySpawnSize;
-
-            Vector2 anchor = new Vector2(-viewport.x / 2.0f, battleCamera.orthographicSize - viewport.y);
-
-            Vector2 div = viewport / enemySize;
+            Vector2 div = mMonsterAreaSize / enemySize;
             Vector2Int grid = new Vector2Int(Mathf.FloorToInt(div.x), Mathf.FloorToInt(div.y));
             Vector2 gridPos = new Vector2((int)(Random.value * grid.x), (int)(Random.value * grid.y));
-            targetPosition = ((Vector2)enemyExtent + gridPos * enemySize) + anchor;
-            targetPosition.y -= 0.3f;
+            targetPosition = ((Vector2)enemyExtent + gridPos * enemySize) + mMonsterAreaAnchor;
 
             // create
             monsterObject.transform.SetParent(mEnemyParent, false);
@@ -220,4 +225,6 @@ class MonsterManager
             }
 
     }
+
+    
 }

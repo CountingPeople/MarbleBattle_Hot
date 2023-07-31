@@ -22,6 +22,9 @@ public class CameraDirector : MonoBehaviour
     {
         mDirector = GetComponent<PlayableDirector>();
         mTimelineDuration = (float)mDirector.duration;
+
+        mDirector.time = 0;
+        mDirector.Evaluate();
     }
 
     // Update is called once per frame
