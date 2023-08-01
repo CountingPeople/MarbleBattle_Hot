@@ -52,6 +52,9 @@ public class SoldierQueue : MonoBehaviour
         soilderInstance.AddComponent<PlayerGuardDragable>();
 
         mGridLayout.RefreshView(mQueue);
+
+        // notify
+        MarbleEventManager.OnSoldierQueueChanged.Invoke(mQueue.Count);
     }
 
     public void Extract(GameObject soilderInstance)
@@ -59,6 +62,9 @@ public class SoldierQueue : MonoBehaviour
         mQueue.Remove(soilderInstance);
 
         mGridLayout.RefreshView(mQueue);
+
+        // notify
+        MarbleEventManager.OnSoldierQueueChanged.Invoke(mQueue.Count);
     }
 
     /*

@@ -12,4 +12,6 @@ public static class MarbleEventManager
     public static UnityEvent RequestMarbleStartRevive = new UnityEvent();
 
     public static UnityEvent OnMarbleHitBorder = new UnityEvent();
+
+    public static UnityEvent<int> OnSoldierQueueChanged = new UnityEvent<int>();
 }
