@@ -2,7 +2,6 @@ using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class SoldierManager : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class SoldierManager : MonoBehaviour
 
         foreach(var item in soldierConfigTable.DataList)
         {
-            mSoldierTemplat.Add(item.Id, AssetDatabase.LoadAssetAtPath<GameObject>(path + item.Resource+".prefab"));
+            mSoldierTemplat.Add(item.Id, ResourcesModule.LoadAssetAtPath<GameObject>(path + item.Resource+".prefab"));
         }
 
         MarbleEventManager.OnBrickDestory.AddListener(OnBrickDestory);

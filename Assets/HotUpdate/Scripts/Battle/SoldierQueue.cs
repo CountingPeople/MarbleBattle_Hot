@@ -2,7 +2,6 @@ using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class SoldierQueue : MonoBehaviour
 {
@@ -30,7 +29,7 @@ public class SoldierQueue : MonoBehaviour
     private void Awake()
     {
         int cellCountX = GetCellCount();
-        mGridElementBackground = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/SoldierQueue/SoldierCell.prefab");
+        mGridElementBackground = ResourcesModule.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/SoldierQueue/SoldierCell.prefab");
         mGridLayout = new GridLayout(transform, (uint)cellCountX, 1, _CellSize, GetCellSizeWithPadding(), Vector2.zero, mGridElementBackground);
     }
 

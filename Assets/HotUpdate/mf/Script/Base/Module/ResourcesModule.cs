@@ -85,6 +85,20 @@ namespace Framework
             return null;
         }
 
+        // for quick dev when run game from current scene
+        static public T LoadAssetAtPath<T>(string path, bool autoRelease = true, string bundleName = "AllBundle") where T : Object
+        {
+#if UNITY_EDITOR
+            if (Instance == null)
+                return AssetDatabase.LoadAssetAtPath<T>(path);
+            else
+                return Instance.Load<T>(path, autoRelease, bundleName);
+#else
+            return AssetComponent.Load<T>(path, bundleName);
+#endif
+            return null;
+        }
+
         /// <summary>
         /// 读取不创建
         /// </summary>

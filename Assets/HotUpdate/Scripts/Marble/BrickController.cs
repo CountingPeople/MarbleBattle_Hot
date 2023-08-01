@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Framework;
-using UnityEditor;
 
 public class BrickController : MonoBehaviour
 {
@@ -68,7 +67,7 @@ public class BrickController : MonoBehaviour
         mTextNumber = GetComponentInChildren<TextMeshPro>();
         mAnimator = GetComponentInChildren<Animator>();
 
-        mEffectTemplate = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab");
+        mEffectTemplate = ResourcesModule.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Effect/Fx_Stars.prefab");
 
         StartColor = mTextNumber.color;
     }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEditor;
 
 public class BrickManager : MonoBehaviour
 {
@@ -193,7 +192,7 @@ public class BrickManager : MonoBehaviour
 
     void Start()
     {
-        mBrickRewardResourceTemplate = AssetDatabase.LoadAssetAtPath<GameObject>(_BrickTemplatePath);
+        mBrickRewardResourceTemplate = ResourcesModule.LoadAssetAtPath<GameObject>(_BrickTemplatePath);
         mBrickRewardResource = DataManager.DataTable.TbBrickConfig;
 
         GenerateBrickGrid();
@@ -270,7 +269,7 @@ public class BrickManager : MonoBehaviour
         if(resourceConfig.Icon == "none")
             brickObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         else
-            brickObject.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
+            brickObject.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = ResourcesModule.LoadAssetAtPath<Sprite>("Assets/Bundles/Res/Texture/Marble/BrickIcon/" + resourceConfig.Icon+".png");
 
         // number and type
         var brickController = brickObject.GetComponent<BrickController>();

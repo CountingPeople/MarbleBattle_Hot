@@ -2,7 +2,6 @@ using Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 public class EnemySpikeShooter : IBattleEntity
 {
     private float mMoveSpeed = 1;
@@ -53,7 +52,7 @@ public class EnemySpikeShooter : IBattleEntity
     {
         base.Start();
 
-        mWeapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Battle/weapon_bianbian.prefab");
+        mWeapon = ResourcesModule.LoadAssetAtPath<GameObject>("Assets/Bundles/Res/Prefabs/Battle/weapon_bianbian.prefab");
     }
 
     // Update is called once per frame
