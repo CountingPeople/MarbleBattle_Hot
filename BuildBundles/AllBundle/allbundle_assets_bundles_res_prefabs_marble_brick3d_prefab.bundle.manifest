@@ -1,0 +1,62 @@
+ManifestFileVersion: 0
+CRC: 3523848423
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: db083927a66fa71e60536c6ccdd4df98
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7f7253d86d9245f3712aef09956d3377
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ed1ce8e811e7074a86b26606daf8831, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+Assets:
+- Assets/Bundles/Res/Prefabs/Marble/Brick3D.prefab
+Dependencies:
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_art_animation_marble_brick_brick_controller.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_marble_paperbox_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_mesh_carboard_box_fbx.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brickicon_cat_jinjianceng_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle

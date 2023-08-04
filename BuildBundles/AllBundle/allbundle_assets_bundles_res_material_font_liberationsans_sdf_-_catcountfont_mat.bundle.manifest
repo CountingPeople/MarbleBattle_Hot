@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1787204602
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c01da2cfc18d01a534a51e1b30b31f7b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16c36b7b3350fad15821c42f96c32ccb
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Material/Font/LiberationSans SDF - CatCountFont.mat
+Dependencies:
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

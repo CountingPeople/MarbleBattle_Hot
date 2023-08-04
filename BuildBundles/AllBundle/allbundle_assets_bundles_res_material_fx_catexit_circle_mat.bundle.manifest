@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3589030856
+CRC: 3439203617
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0bd9db517a3376250ac33d61f25e0abe
+    Hash: 86c57e528aec476670b455c2ada4151e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_CatExit_Circle.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(65)_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(65)_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

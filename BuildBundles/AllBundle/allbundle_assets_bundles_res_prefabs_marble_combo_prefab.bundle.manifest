@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 10283292
+CRC: 222310174
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2035edb99ea4f5e7c97f9eff878a8460
+    Hash: 647807351719081d560b44ac9ab10703
   TypeTreeHash:
     serializedVersion: 2
     Hash: 1691380c78352a362b3d0ee6be1f60bc
@@ -51,5 +51,5 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Bundles/Res/Prefabs/Marble/Combo.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_numbers_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_common_ui_numbers_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

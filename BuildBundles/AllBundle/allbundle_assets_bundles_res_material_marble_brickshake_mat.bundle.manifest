@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2918602392
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 03a2018672d53928f2b1c855e48e671d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 16c36b7b3350fad15821c42f96c32ccb
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Material/Marble/BrickShake.mat
+Dependencies:
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_marble_brickshake_shadergraph.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_paperboxdiffuse_png.bundle

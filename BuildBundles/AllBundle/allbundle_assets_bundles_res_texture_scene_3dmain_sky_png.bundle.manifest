@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 1078398233
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0c3cb5e61249c7dc30e3927ae05b7799
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Texture/Scene/3DMain/Sky.png
+Dependencies: []

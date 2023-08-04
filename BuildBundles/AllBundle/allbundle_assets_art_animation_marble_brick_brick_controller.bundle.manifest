@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2626819992
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d5c7ff7ef4128425a0c024612e945a97
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bbfaa0f72a86ec3f92b1fc3129632085
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Animation/Marble/Brick/Brick.controller
+Dependencies:
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_art_animation_marble_brick_shake3d_anim.bundle

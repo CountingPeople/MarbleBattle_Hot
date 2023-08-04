@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2956329113
+CRC: 1248449340
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a8daf1edbf1e2749cb7df3239375075f
+    Hash: 90b0ee78dee810f96d852323fc8437b4
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,6 +19,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/ParticlePot.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_particle_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_particle_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

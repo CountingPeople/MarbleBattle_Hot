@@ -10,6 +10,7 @@
 #include "os/MemoryMappedFile.h"
 #include "os/Mutex.h"
 #include "os/Path.h"
+#include "os/SynchronizationContext.h"
 #include "os/Thread.h"
 #include "os/Socket.h"
 #include "os/c-api/Allocator.h"
@@ -68,6 +69,7 @@ extern "C" {
 #endif
 
 #include "hybridclr/Runtime.h"
+#include "hybridclr/Il2CppCompatibleDef.h"
 
 Il2CppDefaults il2cpp_defaults;
 bool g_il2cpp_is_fully_initialized = false;
@@ -171,6 +173,11 @@ namespace vm
 
 #if !IL2CPP_TINY && !IL2CPP_MONO_DEBUGGER
         il2cpp::utils::DebugSymbolReader::LoadDebugSymbols();
+#endif
+
+#if IL2CPP_HAS_OS_SYNCHRONIZATION_CONTEXT
+        // Has to happen after Thread::Init() due to it needing a COM apartment on Windows
+        il2cpp::os::SynchronizationContext::Initialize();
 #endif
 
         // This should be filled in by generated code.
@@ -433,6 +440,11 @@ namespace vm
         // after the gc cleanup so the finalizer thread can unregister itself
         Thread::Uninitialize();
 
+#if IL2CPP_HAS_OS_SYNCHRONIZATION_CONTEXT
+        // Has to happen before os::Thread::Shutdown() due to it needing a COM apartment on Windows
+        il2cpp::os::SynchronizationContext::Shutdown();
+#endif
+
         os::Thread::Shutdown();
 
 #if IL2CPP_ENABLE_RELOAD
@@ -565,6 +577,7 @@ namespace vm
 
     Il2CppObject* Runtime::InvokeWithThrow(const MethodInfo *method, void *obj, void **params)
     {
+        hybridclr::InitAndGetInterpreterDirectlyCallMethodPointer(method);
         if (method->return_type->type == IL2CPP_TYPE_VOID)
         {
             method->invoker_method(method->methodPointer, method, obj, params, NULL);

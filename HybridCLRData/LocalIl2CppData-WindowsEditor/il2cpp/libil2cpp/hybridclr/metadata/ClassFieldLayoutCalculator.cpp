@@ -90,7 +90,9 @@ namespace metadata
             sa.size = classLayout.instanceSize - sizeof(Il2CppObject);
             sa.nativeSize = classLayout.nativeSize;
             sa.alignment = classLayout.alignment;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
             sa.naturalAlignment = classLayout.naturalAlignment;
+#endif
             return sa;
         }
         case IL2CPP_TYPE_GENERICINST:
@@ -105,7 +107,9 @@ namespace metadata
                 sa.size = classLayout.instanceSize - sizeof(Il2CppObject);
                 sa.nativeSize = classLayout.nativeSize;
                 sa.alignment = classLayout.alignment;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
                 sa.naturalAlignment = classLayout.naturalAlignment;
+#endif
             }
             else
             {
@@ -132,9 +136,9 @@ namespace metadata
         return size;
     }
 
-    void ClassFieldLayoutCalculator::LayoutFields(int32_t parentSize, int32_t actualParentSize, int32_t parentAlignment, uint8_t packing, std::vector<FieldLayout*>& fields, FieldLayoutData& data)
+    void ClassFieldLayoutCalculator::LayoutFields(int32_t actualParentSize, int32_t parentAlignment, uint8_t packing, std::vector<FieldLayout*>& fields, FieldLayoutData& data)
     {
-        data.classSize = parentSize;
+        //data.classSize = parentSize;
         data.actualClassSize = actualParentSize;
         IL2CPP_ASSERT(parentAlignment <= std::numeric_limits<uint8_t>::max());
         data.minimumAlignment = static_cast<uint8_t>(parentAlignment);
@@ -227,7 +231,9 @@ namespace metadata
             layout.actualSize = klass->actualSize;
             layout.nativeSize = klass->native_size;
             layout.alignment = klass->minimumAlignment;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
             layout.naturalAlignment = klass->naturalAligment;
+#endif
             return;
         }
 
@@ -259,8 +265,8 @@ namespace metadata
 		}
 
 
-
-        uint8_t packingSize = (uint8_t)_image->GetPackingSize(typeDef);
+        TbClassLayout classLayoutData = _image->GetClassLayout(typeDef);
+        uint8_t packingSize = (uint8_t)classLayoutData.packingSize;
 
         bool isExplictLayout = typeDef->flags & TYPE_ATTRIBUTE_EXPLICIT_LAYOUT;
         if (isExplictLayout)
@@ -278,27 +284,36 @@ namespace metadata
                 instanceSize = std::max(instanceSize, field.offset + (int32_t)sa.size);
             }
             // TODO FIXME. not consider packingSize
-
-            layout.alignment = packingSize;
-            layout.naturalAlignment = 1;
-            layout.actualSize = layout.instanceSize = instanceSize;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
+            layout.naturalAlignment = layout.alignment = std::max(packingSize, (uint8_t)1);
+#endif
+            layout.actualSize = layout.instanceSize = AlignTo(instanceSize, layout.alignment);
             layout.nativeSize = -1;
         }
         else
         {
-            int32_t parentSize = 0;
+            uint8_t parentMinimumAligment;
             int32_t parentActualSize = 0;
             if (typeDef->parentIndex != kInvalidIndex)
             {
-                const Il2CppType* parentType = il2cpp::vm::GlobalMetadata::GetIl2CppTypeFromIndex(typeDef->parentIndex);
-                CalcClassNotStaticFields(parentType);
-                ClassLayoutInfo* parentLayout = GetClassLayoutInfo(parentType);
-                parentSize = parentLayout->instanceSize;
-                parentActualSize = parentLayout->actualSize;
+                if (IsValueType(typeDef))
+                {
+                    parentMinimumAligment = 1;
+                    parentActualSize = sizeof(Il2CppObject);
+                }
+                else
+                {
+                    const Il2CppType* parentType = il2cpp::vm::GlobalMetadata::GetIl2CppTypeFromIndex(typeDef->parentIndex);
+                    CalcClassNotStaticFields(parentType);
+                    ClassLayoutInfo* parentLayout = GetClassLayoutInfo(parentType);
+                    parentActualSize = parentLayout->actualSize;
+                    parentMinimumAligment = parentLayout->alignment;
+                }
             }
             else
             {
-                parentSize = parentActualSize = sizeof(Il2CppObject);
+                parentActualSize = sizeof(Il2CppObject);
+                parentMinimumAligment = PTR_SIZE;
             }
 
             std::vector<FieldLayout*> instanceFields;
@@ -307,10 +322,17 @@ namespace metadata
                 if (IsInstanceField(field.type))
                     instanceFields.push_back(&field);
             }
+
             FieldLayoutData layoutData;
-            LayoutFields(parentSize, parentActualSize, 1, packingSize, instanceFields, layoutData);
+            LayoutFields(parentActualSize, parentMinimumAligment, packingSize, instanceFields, layoutData);
+            if (fields.empty() && IsValueType(type))
+            {
+                layoutData.classSize = layoutData.actualClassSize = layoutData.nativeSize = IL2CPP_SIZEOF_STRUCT_WITH_NO_INSTANCE_FIELDS + sizeof(Il2CppObject);;
+            }
             layout.alignment = layoutData.minimumAlignment;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
             layout.naturalAlignment = layoutData.naturalAlignment;
+#endif
             layout.actualSize = layoutData.actualClassSize;
             layout.instanceSize = layoutData.classSize;
             layout.nativeSize = layoutData.nativeSize;
@@ -318,6 +340,10 @@ namespace metadata
             if (!IsValueType(typeDef))
             {
                 layout.nativeSize = -1;
+            }
+            if (classLayoutData.classSize > 0)
+            {
+                layout.actualSize = layout.instanceSize = layout.instanceSize = classLayoutData.classSize + sizeof(Il2CppObject);
             }
         }
 	}
@@ -344,13 +370,13 @@ namespace metadata
         if (!staticFields.empty())
         {
             FieldLayoutData staticLayoutData;
-            LayoutFields(0, 0, 1, 0, staticFields, staticLayoutData);
+            LayoutFields(0, 1, 0, staticFields, staticLayoutData);
             layout.staticFieldsSize = staticLayoutData.classSize;
         }
         if (!threadStaticFields.empty())
         {
             FieldLayoutData threadStaticLayoutData;
-            LayoutFields(0, 0, 1, 0, threadStaticFields, threadStaticLayoutData);
+            LayoutFields(0, 1, 0, threadStaticFields, threadStaticLayoutData);
             layout.threadStaticFieldsSize = threadStaticLayoutData.classSize;
             for (FieldLayout* field : threadStaticFields)
             {

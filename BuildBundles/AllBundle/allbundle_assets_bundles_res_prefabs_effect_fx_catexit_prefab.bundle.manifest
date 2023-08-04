@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2498167241
+CRC: 244911243
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f69718386f3a9237207a571e8c1d06ce
+    Hash: d5faaff7a450625c5bec9ccbab0399f0
   TypeTreeHash:
     serializedVersion: 2
     Hash: c7f8408b218f83b216f5b593e2363165
@@ -23,6 +23,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Effect/Fx_CatExit.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_circle_mat.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_smoke_mat.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_star_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_circle_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_smoke_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_catexit_star_mat.bundle

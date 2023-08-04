@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1639007780
+CRC: 1660760204
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 26b3e6260b35326c6c4462956aa258d0
+    Hash: 382eb1436bdfc1f8d1057b921753d172
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9fe2cdda67bb96e73348b04c9b270b48
@@ -33,5 +33,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/weapon_ya.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_ya_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_ya_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 541323472
+CRC: 823757569
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0752afac0e5091e416db762be259f41e
+    Hash: 3c2631539d4dcb37862ae7488d635042
   TypeTreeHash:
     serializedVersion: 2
     Hash: c916c03835e9c6ab3ae06250bfcbdd5a
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/weapon_bianbian.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_bianbian_prefab.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_niaoshi_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_bianbian_prefab.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_enemy_niaoshi_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1220413639
+CRC: 343018054
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c4306c678ad51fb22b98251e01273046
+    Hash: 0a818348e73e6c8ebd3e7db6d1ecad5b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_CatExit_Star.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(3146)_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(3146)_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

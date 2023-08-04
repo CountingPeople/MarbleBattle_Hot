@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2083095188
+CRC: 1418036676
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e69a015db407eb751031299e58afd2ca
+    Hash: 3cdd64bcc4bcb210b5113ca269ffaf1c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 81fc4833398717ae320ec5bd08c661f4
@@ -27,4 +27,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Mesh/Wind.FBX
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

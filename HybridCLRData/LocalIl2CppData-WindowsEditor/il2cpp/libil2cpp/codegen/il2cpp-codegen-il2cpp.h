@@ -969,13 +969,13 @@ void il2cpp_codegen_write_instance_field_data(void* instance, RuntimeField* fiel
 template<typename T>
 inline void il2cpp_codegen_write_instance_field_data(intptr_t instance, RuntimeField* field, T data)
 {
-    il2cpp_codegen_write_instance_field_data((void*)instance, field, data);
+    il2cpp_codegen_write_instance_field_data<T>((void*)instance, field, data);
 }
 
 template<typename T>
 inline void il2cpp_codegen_write_instance_field_data(uintptr_t instance, RuntimeField* field, T data)
 {
-    il2cpp_codegen_write_instance_field_data((void*)instance, field, data);
+    il2cpp_codegen_write_instance_field_data<T>((void*)instance, field, data);
 }
 
 template<typename T>

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4171799687
+CRC: 3120506525
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 210d2f02e108eeabd16b169d953b4e34
+    Hash: dd82d6f1446cc9499f2c1e20b02a10a2
   TypeTreeHash:
     serializedVersion: 2
     Hash: 071cfd7cbbe91ffa08fa7d9635235916
@@ -33,5 +33,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/weapon_ci.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_ci_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_ci_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

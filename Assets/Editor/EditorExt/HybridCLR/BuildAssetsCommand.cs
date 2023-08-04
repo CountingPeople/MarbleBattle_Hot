@@ -50,7 +50,7 @@ namespace HybridCLR.Editor
 
             {
                 var prefabAssets = new List<string>();
-                string testPrefab = $"{Application.dataPath}/Prefabs/HotUpdatePrefab.prefab";
+                string testPrefab = $"{Application.dataPath}/Prefabs/Cube.prefab";
                 prefabAssets.Add(testPrefab);
                 AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
                 abs.Add(new AssetBundleBuild
@@ -98,8 +98,12 @@ namespace HybridCLR.Editor
             string aotAssembliesSrcDir = SettingsUtil.GetAssembliesPostIl2CppStripDir(target);
             string aotAssembliesDstDir = Application.streamingAssetsPath;
 
-            foreach (var dll in LoadDll.AOTMetaAssemblyNames)
+            //foreach (var dll in SettingsUtil.AOTAssemblyNames)
+            var temp = LoadDll.AOTMetaAssemblyNames;
+            temp.Add("Assembly-CSharp.dll");
+            foreach (var dll in temp)
             {
+                //string srcDllPath = $"{aotAssembliesSrcDir}/{dll}.dll";
                 string srcDllPath = $"{aotAssembliesSrcDir}/{dll}";
                 if (!File.Exists(srcDllPath))
                 {
@@ -118,11 +122,7 @@ namespace HybridCLR.Editor
 
             string hotfixDllSrcDir = SettingsUtil.GetHotUpdateDllsOutputDirByTarget(target);
             string hotfixAssembliesDstDir = Application.streamingAssetsPath;
-#if NEW_HYBRIDCLR_API
             foreach (var dll in SettingsUtil.HotUpdateAssemblyFilesExcludePreserved)
-#else
-            foreach (var dll in SettingsUtil.HotUpdateAssemblyFiles)
-#endif
             {
                 string dllPath = $"{hotfixDllSrcDir}/{dll}";
                 string dllBytesPath = $"{hotfixAssembliesDstDir}/{dll}.bytes";

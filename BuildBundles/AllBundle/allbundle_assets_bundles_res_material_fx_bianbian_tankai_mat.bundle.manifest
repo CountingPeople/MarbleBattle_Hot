@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1233671195
+CRC: 3718221714
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c084e4a34b623e89dfee7fc025755aae
+    Hash: 67b88d0df8b5f9b6036cb2efe3848dd9
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_BianBian_TanKai.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(3145)_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(3145)_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

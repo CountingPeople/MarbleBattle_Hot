@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2330350881
+CRC: 389753431
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e685f6f0666dfa767cf5fbfc859308dc
+    Hash: d251b7c037967f8b8f5622842d005af8
   TypeTreeHash:
     serializedVersion: 2
     Hash: 947808fcb0df2e44e7328f24bbd2d3d3
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/enemy_dandinghe_lv3.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_dandinghe_lv3_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_niao_0_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

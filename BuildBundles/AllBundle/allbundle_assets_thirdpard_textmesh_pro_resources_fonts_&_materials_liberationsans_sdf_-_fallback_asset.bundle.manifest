@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 393343077
+CRC: 1220845644
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 951ef85055b3a5201d366859b394b41f
+    Hash: 282b7208b697d1b747a925d7d1dac26c
   TypeTreeHash:
     serializedVersion: 2
     Hash: c9915f7a67946c73574a15d6bdc5c5f6
@@ -40,5 +40,5 @@ Assets:
 - Assets/ThirdPard/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF -
   Fallback.asset
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_fonts_liberationsans_ttf.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_fonts_liberationsans_ttf.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3998296971
+CRC: 3374805406
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 80f8d62c9887d6f95e5fb6593122efbe
+    Hash: e5c50d116d7940f4b014828727f0e209
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b23e6bf4a30d676d9d1aac4e37d6731f
+    Hash: e83fbdc1d14588b9497ebd28ec8a130e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,8 +22,6 @@ ClassTypes:
 - Class: 50
   Script: {instanceID: 0}
 - Class: 61
-  Script: {instanceID: 0}
-- Class: 74
   Script: {instanceID: 0}
 - Class: 91
   Script: {instanceID: 0}
@@ -53,8 +51,8 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Bundles/Res/Prefabs/Marble/BrickTemplate.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_brickshake_mat.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brickicon_cat_nainiu_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_art_animation_marble_brick_brick_controller.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brickicon_cat_nainiu_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

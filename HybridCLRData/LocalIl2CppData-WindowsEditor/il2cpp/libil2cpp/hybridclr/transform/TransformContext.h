@@ -107,7 +107,6 @@ namespace transform
 	const int32_t MAX_STACK_SIZE = (2 << 16) - 1;
 	const int32_t MAX_VALUE_TYPE_SIZE = (2 << 16) - 1;
 
-	uint32_t GetOrAddResolveDataIndex(std::unordered_map<const void*, uint32_t>& ptr2Index, std::vector<uint64_t>& resolvedDatas, const void* ptr);
 	EvalStackReduceDataType GetEvalStackReduceDataType(const Il2CppType* type);
 	int32_t GetSizeByReduceType(EvalStackReduceDataType type);
 
@@ -192,6 +191,24 @@ namespace transform
 		int32_t& brOffset;
 
 		const MethodInfo*& shareMethod;
+
+		static void InitializeInstinctHandlers();
+
+		uint32_t GetOrAddResolveDataIndex(const void* ptr)
+		{
+			auto it = ptr2DataIdxs.find(ptr);
+			if (it != ptr2DataIdxs.end())
+			{
+				return it->second;
+			}
+			else
+			{
+				uint32_t newIndex = (uint32_t)resolveDatas.size();
+				resolveDatas.push_back((uint64_t)ptr);
+				ptr2DataIdxs.insert({ ptr, newIndex });
+				return newIndex;
+			}
+		}
 
 		int32_t GetArgOffset(int32_t idx)
 		{
@@ -419,6 +436,47 @@ namespace transform
 			PushStackByType(__arg.type);
 		}
 
+		bool IsCreateNotNullObjectInstrument(IRCommon* ir)
+		{
+			switch (ir->type)
+			{
+				case HiOpcodeEnum::BoxVarVar:
+				case HiOpcodeEnum::NewSystemObjectVar:
+				case HiOpcodeEnum::NewString:
+				case HiOpcodeEnum::NewString_2:
+				case HiOpcodeEnum::NewString_3:
+				case HiOpcodeEnum::CtorDelegate:
+				case HiOpcodeEnum::NewDelegate:
+				//case HiOpcodeEnum::NewClassInterpVar_Ctor_0:
+				//case HiOpcodeEnum::NewClassInterpVar:
+				//case HiOpcodeEnum::NewClassVar:
+				//case HiOpcodeEnum::NewClassVar_Ctor_0:
+				//case HiOpcodeEnum::NewClassVar_NotCtor:
+				case HiOpcodeEnum::NewMdArrVarVar_length:
+				case HiOpcodeEnum::NewMdArrVarVar_length_bound:
+				case HiOpcodeEnum::NewArrVarVar_4:
+				case HiOpcodeEnum::NewArrVarVar_8:
+				case HiOpcodeEnum::LdsfldaFromFieldDataVarVar:
+				case HiOpcodeEnum::LdsfldaVarVar:
+				case HiOpcodeEnum::LdthreadlocalaVarVar:
+				case HiOpcodeEnum::LdlocVarAddress:
+					return true;
+				default:
+					return false;
+			}
+		}
+
+		IRCommon* GetLastInstrument()
+		{
+			return curbb->insts.empty() ? nullptr : curbb->insts.back();
+		}
+
+		void RemoveLastInstrument()
+		{
+			IL2CPP_ASSERT(!curbb->insts.empty());
+			curbb->insts.pop_back();
+		}
+
 		void AddInst_ldarga(int32_t argIdx)
 		{
 			IL2CPP_ASSERT(argIdx < actualParamCount);
@@ -482,21 +540,43 @@ namespace transform
 		void Add_brtruefalse(bool c, int32_t targetOffset)
 		{
 			EvalStackVarInfo& top = evalStack[evalStackTop - 1];
-			if (top.byteSize <= 4)
+			IRCommon* lastIR = GetLastInstrument();
+			if (lastIR == nullptr || !IsCreateNotNullObjectInstrument(lastIR))
 			{
-				CreateAddIR(ir, BranchTrueVar_i4);
-				ir->type = c ? HiOpcodeEnum::BranchTrueVar_i4 : HiOpcodeEnum::BranchFalseVar_i4;
-				ir->op = top.locOffset;
-				ir->offset = targetOffset;
-				PushOffset(&ir->offset);
+				if (top.byteSize <= 4)
+				{
+					CreateAddIR(ir, BranchTrueVar_i4);
+					ir->type = c ? HiOpcodeEnum::BranchTrueVar_i4 : HiOpcodeEnum::BranchFalseVar_i4;
+					ir->op = top.locOffset;
+					ir->offset = targetOffset;
+					PushOffset(&ir->offset);
+				}
+				else
+				{
+					CreateAddIR(ir, BranchTrueVar_i8);
+					ir->type = c ? HiOpcodeEnum::BranchTrueVar_i8 : HiOpcodeEnum::BranchFalseVar_i8;
+					ir->op = top.locOffset;
+					ir->offset = targetOffset;
+					PushOffset(&ir->offset);
+				}
 			}
 			else
 			{
-				CreateAddIR(ir, BranchTrueVar_i8);
-				ir->type = c ? HiOpcodeEnum::BranchTrueVar_i8 : HiOpcodeEnum::BranchFalseVar_i8;
-				ir->op = top.locOffset;
-				ir->offset = targetOffset;
-				PushOffset(&ir->offset);
+				// optimize instrument sequence like` box T!; brtrue`
+				// this optimization is not semanticly equals to origin instrument because may ommit `Class::InitRuntime`.
+				// but it's ok in most occasions.
+				RemoveLastInstrument();
+				if (c)
+				{
+					// brtrue always true, replace with br
+					CreateAddIR(ir, BranchUncondition_4);
+					ir->offset = targetOffset;
+					PushOffset(&ir->offset);
+				}
+				else
+				{
+					// brfalse always false, run throughtly.
+				}
 			}
 			PopStack();
 			PushBranch(targetOffset);
@@ -1091,7 +1171,7 @@ namespace transform
 			uint16_t index = 0;
 			for (const ExceptionClause& ec : exceptionClauses)
 			{
-				if (ec.flags == CorILExceptionClauseType::Finally)
+				if (ec.flags == CorILExceptionClauseType::Finally || ec.flags == CorILExceptionClauseType::Exception || ec.flags == CorILExceptionClauseType::Filter)
 				{
 					if (ec.tryOffset <= throwOffset && throwOffset < ec.tryOffset + ec.tryLength)
 						return index;
@@ -1108,6 +1188,8 @@ namespace transform
 
 		bool TryAddInstinctInstrumentsByName(const MethodInfo* method);
 		bool TryAddArrayInstinctInstruments(const MethodInfo* method);
+
+		bool TryAddInstinctCtorInstruments(const MethodInfo* method);
 
 		bool TryAddCallCommonInstruments(const MethodInfo* method, uint32_t methodDataIndex)
 		{

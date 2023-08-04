@@ -40,25 +40,49 @@ namespace interpreter
 		MachineState()
 		{
 			Config& hc = Config::GetIns();
-			_stackSize = (int32_t)hc.GetInterpreterThreadObjectStackSize();
-			_stackBase = (StackObject*)il2cpp::gc::GarbageCollector::AllocateFixed(hc.GetInterpreterThreadObjectStackSize() * sizeof(StackObject), nullptr);
-			std::memset(_stackBase, 0, _stackSize * sizeof(StackObject));
+			_stackSize = -1;
+			_stackBase = nullptr;
 			_stackTopIdx = 0;
+			_localPoolBottomIdx = -1;
 
-			_frameBase = (InterpFrame*)IL2CPP_CALLOC(hc.GetInterpreterThreadFrameStackSize(), sizeof(InterpFrame));
-			_frameCount = (int32_t)hc.GetInterpreterThreadFrameStackSize();
+			_frameBase = nullptr;
+			_frameCount = -1;
 			_frameTopIdx = 0;
 
-			_exceptionFlowBase = (ExceptionFlowInfo*)IL2CPP_CALLOC(hc.GetInterpreterThreadExceptionFlowSize(), sizeof(ExceptionFlowInfo));
-			_exceptionFlowCount = (int32_t)hc.GetInterpreterThreadExceptionFlowSize();
+			_exceptionFlowBase = nullptr;
+			_exceptionFlowCount = -1;
 			_exceptionFlowTopIdx = 0;
 		}
 
 		~MachineState()
 		{
-			il2cpp::gc::GarbageCollector::FreeFixed(_stackBase);
-			IL2CPP_FREE(_frameBase);
-			IL2CPP_FREE(_exceptionFlowBase);
+			if (_stackBase)
+			{
+				//il2cpp::gc::GarbageCollector::FreeFixed(_stackBase);
+				il2cpp::gc::GarbageCollector::UnregisterDynamicRoot(this);
+				IL2CPP_FREE(_stackBase);
+			}
+			if (_frameBase)
+			{
+				IL2CPP_FREE(_frameBase);
+			}
+			if (_exceptionFlowBase)
+			{
+				IL2CPP_FREE(_exceptionFlowBase);
+			}
+		}
+
+		static std::pair<char*, size_t> GetGCRootData(void* root)
+		{
+			MachineState* machineState = (MachineState*)root;
+			if (machineState->_stackBase && machineState->_stackTopIdx > 0)
+			{
+				return std::make_pair((char*)machineState->_stackBase, machineState->_stackTopIdx * sizeof(StackObject));
+			}
+			else
+			{
+				return std::make_pair(nullptr, 0);
+			}
 		}
 
 		StackObject* AllocArgments(int32_t argCount)
@@ -78,9 +102,16 @@ namespace interpreter
 
 		StackObject* AllocStackSlot(int32_t slotNum)
 		{
-			if (_stackTopIdx + slotNum > _stackSize)
+			if (_stackTopIdx + slotNum > _localPoolBottomIdx)
 			{
-				il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetStackOverflowException("AllocStackSlot"));
+				if (!_stackBase)
+				{
+					InitEvalStack();
+				}
+				if (_stackTopIdx + slotNum > _localPoolBottomIdx)
+				{
+					il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetStackOverflowException("AllocStackSlot"));
+				}
 			}
 			StackObject* dataPtr = _stackBase + _stackTopIdx;
 			_stackTopIdx += slotNum;
@@ -88,6 +119,26 @@ namespace interpreter
 			std::memset(dataPtr, 0xEA, slotNum * sizeof(StackObject));
 #endif
 			return dataPtr;
+		}
+
+		void* AllocLocalloc(size_t size)
+		{
+			IL2CPP_ASSERT(size % 8 == 0);
+			int32_t slotNum = (int32_t)(size / 8);
+			IL2CPP_ASSERT(slotNum > 0);
+			if (_stackTopIdx + slotNum > _localPoolBottomIdx)
+			{
+				if (!_stackBase)
+				{
+					InitEvalStack();
+				}
+				if (_stackTopIdx + slotNum > _localPoolBottomIdx)
+				{
+					il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetStackOverflowException("AllocLocalloc"));
+				}
+			}
+			_localPoolBottomIdx -= slotNum;
+			return _stackBase + _localPoolBottomIdx;
 		}
 
 		void SetStackTop(int32_t oldTop)
@@ -100,11 +151,28 @@ namespace interpreter
 			return _frameTopIdx;
 		}
 
+		int32_t GetLocalPoolBottomIdx() const
+		{
+			return _localPoolBottomIdx;
+		}
+
+		void SetLocalPoolBottomIdx(int32_t idx)
+		{
+			_localPoolBottomIdx = idx;
+		}
+
 		InterpFrame* PushFrame()
 		{
 			if (_frameTopIdx >= _frameCount)
 			{
-				il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetStackOverflowException("AllocFrame"));
+				if (!_frameBase)
+				{
+					InitFrames();
+				}
+				else
+				{
+					il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetStackOverflowException("AllocFrame"));
+				}
 			}
 			return _frameBase + _frameTopIdx++;
 		}
@@ -135,14 +203,20 @@ namespace interpreter
 
 		ExceptionFlowInfo* AllocExceptionFlow(int32_t count)
 		{
-			if (_exceptionFlowTopIdx + count < _exceptionFlowCount)
+			if (_exceptionFlowTopIdx + count >= _exceptionFlowCount)
 			{
-				ExceptionFlowInfo* efi = _exceptionFlowBase + _exceptionFlowTopIdx;
-				_exceptionFlowTopIdx += count;
-				return efi;
+				if (!_exceptionFlowBase)
+				{
+					InitExceptionFlows();
+				}
+				if (_exceptionFlowTopIdx + count >= _exceptionFlowCount)
+				{
+					il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetExecutionEngineException("AllocExceptionFlowZero"));
+				}
 			}
-			il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetExecutionEngineException("AllocExceptionFlowZero"));
-			return nullptr;
+			ExceptionFlowInfo* efi = _exceptionFlowBase + _exceptionFlowTopIdx;
+			_exceptionFlowTopIdx += count;
+			return efi;
 		}
 
 		uint32_t GetExceptionFlowTopIdx() const
@@ -201,9 +275,37 @@ namespace interpreter
 
 	private:
 
+
+		void InitEvalStack()
+		{
+			Config& hc = Config::GetIns();
+			_stackSize = (int32_t)hc.GetInterpreterThreadObjectStackSize();
+			_stackBase = (StackObject*)IL2CPP_MALLOC_ZERO(hc.GetInterpreterThreadObjectStackSize() * sizeof(StackObject));
+			_stackTopIdx = 0;
+			_localPoolBottomIdx = _stackSize;
+			il2cpp::gc::GarbageCollector::RegisterDynamicRoot(this, GetGCRootData);
+		}
+
+		void InitFrames()
+		{
+			Config& hc = Config::GetIns();
+			_frameBase = (InterpFrame*)IL2CPP_CALLOC(hc.GetInterpreterThreadFrameStackSize(), sizeof(InterpFrame));
+			_frameCount = (int32_t)hc.GetInterpreterThreadFrameStackSize();
+			_frameTopIdx = 0;
+		}
+
+		void InitExceptionFlows()
+		{
+			Config& hc = Config::GetIns();
+			_exceptionFlowBase = (ExceptionFlowInfo*)IL2CPP_CALLOC(hc.GetInterpreterThreadExceptionFlowSize(), sizeof(ExceptionFlowInfo));
+			_exceptionFlowCount = (int32_t)hc.GetInterpreterThreadExceptionFlowSize();
+			_exceptionFlowTopIdx = 0;
+		}
+
 		StackObject* _stackBase;
 		int32_t _stackSize;
 		int32_t _stackTopIdx;
+		int32_t _localPoolBottomIdx;
 
 		InterpFrame* _frameBase;
 		int32_t _frameTopIdx;
@@ -263,7 +365,7 @@ namespace interpreter
 			int32_t oldStackTop = _machineState.GetStackTop();
 			StackObject* stackBasePtr = _machineState.AllocStackSlot(imi->maxStackSize - imi->argStackObjectSize);
 			InterpFrame* newFrame = _machineState.PushFrame();
-			*newFrame = { imi, argBase, oldStackTop, nullptr, nullptr, nullptr, 0, 0 };
+			*newFrame = { imi, argBase, oldStackTop, nullptr, nullptr, nullptr, 0, 0, _machineState.GetLocalPoolBottomIdx() };
 			PUSH_STACK_FRAME(imi->method);
 			return newFrame;
 		}
@@ -277,7 +379,7 @@ namespace interpreter
 			int32_t oldStackTop = _machineState.GetStackTop();
 			StackObject* stackBasePtr = _machineState.AllocStackSlot(imi->maxStackSize);
 			InterpFrame* newFrame = _machineState.PushFrame();
-			*newFrame = { imi, stackBasePtr, oldStackTop, nullptr, nullptr, nullptr, 0, 0 };
+			*newFrame = { imi, stackBasePtr, oldStackTop, nullptr, nullptr, nullptr, 0, 0, _machineState.GetLocalPoolBottomIdx() };
 
 			// if not prepare arg stack. copy from args
 			if (imi->args)
@@ -289,7 +391,7 @@ namespace interpreter
 				}
 				else
 				{
-					CopyArgs(stackBasePtr, argBase, imi->args, imi->argCount, imi->argStackObjectSize);
+					CopyArgs(stackBasePtr, argBase, imi->args, imi->argCount);
 				}
 			}
 			PUSH_STACK_FRAME(imi->method);
@@ -310,15 +412,22 @@ namespace interpreter
 			}
 			_machineState.PopFrame();
 			_machineState.SetStackTop(frame->oldStackTop);
+			_machineState.SetLocalPoolBottomIdx(frame->oldLocalPoolBottomIdx);
 			return _machineState.GetFrameTopIdx() > _frameBaseIdx ? _machineState.GetTopFrame() : nullptr;
 		}
 
-		void* AllocLoc(size_t size)
+		void* AllocLoc(size_t originSize, bool fillZero)
 		{
-			uint32_t soNum = (uint32_t)((size + sizeof(StackObject) - 1) / sizeof(StackObject));
-			//void* data = _machineState.AllocStackSlot(soNum);
-			//std::memset(data, 0, soNum * 8);
-			void* data = IL2CPP_MALLOC_ZERO(size);
+			if (originSize == 0)
+			{
+				return nullptr;
+			}
+			size_t size = (originSize + 7) & ~(size_t)7;
+			void* data = _machineState.AllocLocalloc(size);
+			if (fillZero)
+			{
+				std::memset(data, 0, size);
+			}
 			return data;
  		}
 

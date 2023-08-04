@@ -35,6 +35,9 @@ static GC_push_other_roots_proc default_push_other_roots;
 typedef Il2CppHashMap<char*, char*, il2cpp::utils::PassThroughHash<char*> > RootMap;
 static RootMap s_Roots;
 
+typedef Il2CppHashMap<void*, il2cpp::gc::GarbageCollector::GetDynamicRootDataProc, il2cpp::utils::PassThroughHash<void*> > DynamicRootMap;
+static DynamicRootMap s_DynamicRoots;
+
 static void push_other_roots(void);
 
 typedef struct ephemeron_node ephemeron_node;
@@ -43,8 +46,13 @@ static ephemeron_node* ephemeron_list;
 static void
 clear_ephemerons(void);
 
+#if HYBRIDCLR_UNITY_VERSION >= 20210320
+static GC_ms_entry*
+push_ephemerons(GC_ms_entry* mark_stack_ptr, GC_ms_entry* mark_stack_limit);
+#else
 static void
 push_ephemerons(void);
+#endif
 
 #if !IL2CPP_ENABLE_WRITE_BARRIER_VALIDATION
 #define ELEMENT_CHUNK_SIZE 256
@@ -281,8 +289,8 @@ il2cpp::gc::GarbageCollector::SetMode(Il2CppGCMode mode)
     }
 }
 
-bool
-il2cpp::gc::GarbageCollector::RegisterThread(void *baseptr)
+void
+il2cpp::gc::GarbageCollector::RegisterThread()
 {
 #if defined(GC_THREADS) && !IL2CPP_TARGET_JAVASCRIPT
     struct GC_stack_base sb;
@@ -291,20 +299,19 @@ il2cpp::gc::GarbageCollector::RegisterThread(void *baseptr)
     res = GC_get_stack_base(&sb);
     if (res != GC_SUCCESS)
     {
-        sb.mem_base = baseptr;
-#ifdef __ia64__
         /* Can't determine the register stack bounds */
-        IL2CPP_ASSERT(false && "mono_gc_register_thread failed ().");
-#endif
+        IL2CPP_ASSERT(false && "GC_get_stack_base () failed, aborting.");
+        /* Abort we can't scan the stack, so we can't use the GC */
+        abort();
     }
     res = GC_register_my_thread(&sb);
     if ((res != GC_SUCCESS) && (res != GC_DUPLICATE))
     {
         IL2CPP_ASSERT(false && "GC_register_my_thread () failed.");
-        return false;
+        /* Abort we can't use the GC on this thread, so we can't run managed code */
+        abort();
     }
 #endif
-    return true;
 }
 
 bool
@@ -562,11 +569,52 @@ void il2cpp::gc::GarbageCollector::UnregisterRoot(char* start)
     GC_call_with_alloc_lock(deregister_root, start);
 }
 
+struct DynamicRootData
+{
+    void* root;
+    il2cpp::gc::GarbageCollector::GetDynamicRootDataProc getRootDataFunc;
+};
+
+static void* register_dynamic_root(void* arg)
+{
+    DynamicRootData* rootData = (DynamicRootData*)arg;
+    IL2CPP_ASSERT(s_DynamicRoots.find(rootData->root) == s_DynamicRoots.end());
+    s_DynamicRoots.add(rootData->root, rootData->getRootDataFunc);
+    
+    return NULL;
+}
+
+static void* deregister_dynamic_root(void* arg)
+{
+    IL2CPP_ASSERT(s_DynamicRoots.find(arg) != s_DynamicRoots.end());
+    s_DynamicRoots.erase(arg);
+    return NULL;
+}
+
+void il2cpp::gc::GarbageCollector::RegisterDynamicRoot(void* root, GetDynamicRootDataProc getRootDataFunc)
+{
+    DynamicRootData rootData = {root, getRootDataFunc};
+    GC_call_with_alloc_lock(register_dynamic_root, &rootData);
+}
+
+void il2cpp::gc::GarbageCollector::UnregisterDynamicRoot(void* root)
+{
+    GC_call_with_alloc_lock(deregister_dynamic_root, root);
+}
+
 static void
 push_other_roots(void)
 {
     for (RootMap::iterator iter = s_Roots.begin(); iter != s_Roots.end(); ++iter)
         GC_push_all(iter->first, iter->second);
+    for (auto dynamicRootEntry : s_DynamicRoots)
+    {
+        std::pair<char*, size_t> dynamicRootData = dynamicRootEntry.second(dynamicRootEntry.first);
+        if (dynamicRootData.first)
+        {
+            GC_push_all(dynamicRootData.first, dynamicRootData.first + dynamicRootData.second);
+        }
+    }
     GC_push_all(&ephemeron_list, &ephemeron_list + 1);
     if (default_push_other_roots)
         default_push_other_roots();
@@ -642,8 +690,13 @@ clear_ephemerons(void)
     }
 }
 
+#if HYBRIDCLR_UNITY_VERSION >= 20210320
+static GC_ms_entry*
+push_ephemerons(GC_ms_entry* mark_stack_ptr, GC_ms_entry* mark_stack_limit)
+#else
 static void
 push_ephemerons(void)
+#endif
 {
     ephemeron_node* prev_node = NULL;
     ephemeron_node* current_node = NULL;
@@ -678,13 +731,23 @@ push_ephemerons(void)
             if (!GC_is_marked(current_ephemeron->key))
                 continue;
 
+#if HYBRIDCLR_UNITY_VERSION >= 20210320
+            if (current_ephemeron->value)
+            {
+                mark_stack_ptr = GC_mark_and_push((void*)current_ephemeron->value, mark_stack_ptr, mark_stack_limit, (void**)&current_ephemeron->value);
+            }
+#else
             if (current_ephemeron->value && !GC_is_marked(current_ephemeron->value))
             {
                 /* the key is marked, so mark the value if needed */
                 GC_push_all(&current_ephemeron->value, &current_ephemeron->value + 1);
             }
+#endif
         }
     }
+#if HYBRIDCLR_UNITY_VERSION >= 20210320
+    return mark_stack_ptr;
+#endif
 }
 
 bool il2cpp::gc::GarbageCollector::EphemeronArrayAdd(Il2CppObject* obj)

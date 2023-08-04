@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2730148148
+CRC: 3268649179
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7c4a1b094da5dd279b0b837072a9365d
+    Hash: 651cdb8a93a6f11eaddb422ae785c7fd
   TypeTreeHash:
     serializedVersion: 2
     Hash: a3c49a5bd506d94d1240785d0ba7ae33
@@ -34,5 +34,4 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.U2D.SpriteBone
 Assets:
 - Assets/Bundles/Res/Texture/Battle/PSB/bianfu.psb
-Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+Dependencies: []

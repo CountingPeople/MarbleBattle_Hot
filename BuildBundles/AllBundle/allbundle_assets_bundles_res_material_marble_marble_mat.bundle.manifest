@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 3148763553
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f40b7efefba228c98b2044469305bbfa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1397ad235555a4f37791d5b3ff19e7a7
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Bundles/Res/Material/Marble/Marble.mat
+Dependencies:
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_cloud_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marble_1_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_marble_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

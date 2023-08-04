@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3252433727
+CRC: 449883405
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4af1124f652ce67c1f8b6ad0610f0520
+    Hash: a741b7aa6a7f3cf441be6955ab32400c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3122fed3d68238f1d2f1577dbf971adb
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/soldier_nainiu.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_solider_nainiu_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_solider_nainiu_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

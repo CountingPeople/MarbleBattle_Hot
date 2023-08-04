@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 471550518
+CRC: 1875234847
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fdc0d3820864402349e73cba87ace909
+    Hash: 2b624bd689dc4996f51240b59269b24a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 947808fcb0df2e44e7328f24bbd2d3d3
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/enemy_niao_lv4.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_maque_lv4_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_niao_1_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

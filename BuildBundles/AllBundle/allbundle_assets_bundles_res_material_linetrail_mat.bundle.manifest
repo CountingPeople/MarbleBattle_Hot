@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1201897858
+CRC: 2847296454
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 58839a8e882af603876c011c6b07c9e8
+    Hash: c53d43d1f121a4ef2728af1fbbfab9c3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/LineTrail.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1305557954
+CRC: 2999744097
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d3e67d887f4c38dbfbd0e41b2a70b6f7
+    Hash: ea1296ba174427b33e8f385301e6feb0
   TypeTreeHash:
     serializedVersion: 2
     Hash: 947808fcb0df2e44e7328f24bbd2d3d3
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/enemy_bianfu.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_bianfu_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_enemy_bianfu_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

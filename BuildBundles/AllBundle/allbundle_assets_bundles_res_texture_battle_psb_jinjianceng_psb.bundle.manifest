@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 343546516
+CRC: 2001847832
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ff0461c92a98de8fcbab052625f6f765
+    Hash: dbb3619abc6e210a05358cea077ef155
   TypeTreeHash:
     serializedVersion: 2
     Hash: a3c49a5bd506d94d1240785d0ba7ae33
@@ -34,5 +34,4 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.U2D.SpriteBone
 Assets:
 - Assets/Bundles/Res/Texture/Battle/PSB/jinjianceng.psb
-Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+Dependencies: []

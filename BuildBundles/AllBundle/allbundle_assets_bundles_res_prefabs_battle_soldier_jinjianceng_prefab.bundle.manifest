@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3014176523
+CRC: 3936684978
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d71c16cd2bef5d45162b4a66cc0c3f1c
+    Hash: 411ffee03bd9168118ffe606b7188e1f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 62833298c6f86f1d0be764579b4da359
@@ -41,6 +41,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/soldier_jinjianceng.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_psb_jinjianceng_psb.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_healthbar_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_psb_jinjianceng_psb.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

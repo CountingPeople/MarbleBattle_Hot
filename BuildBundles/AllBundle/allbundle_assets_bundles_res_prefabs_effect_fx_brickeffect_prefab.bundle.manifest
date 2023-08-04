@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 783883423
+CRC: 889709300
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 16f080ade220cd5c45ab21b97b8dfc56
+    Hash: 323e28b845708c104437e01446812188
   TypeTreeHash:
     serializedVersion: 2
     Hash: 48aaeb270963cce381ebe734df3d006a
@@ -25,4 +25,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Effect/Fx_BrickEffect.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_brick_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_brick_mat.bundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2768158345
+CRC: 2725633909
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f6773ace750d12391a4bdf70c9f428ce
+    Hash: b4f06634e43c90df39fd8dbb03289724
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_BianBian_FeiJian.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(1896)_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(1896)_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

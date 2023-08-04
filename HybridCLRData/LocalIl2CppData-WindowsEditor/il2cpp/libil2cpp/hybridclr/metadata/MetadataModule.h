@@ -225,6 +225,7 @@ namespace metadata
 			return GetImage(DecodeImageIndex(index))->GetFieldOrParameterDefalutValueByRawIndex(DecodeMetadataIndex(index));
 		}
 
+#if HYBRIDCLR_UNITY_2020
 		static bool HasAttribute(const Il2CppImage* image, uint32_t token, Il2CppClass* attribute)
 		{
 			return GetImage(image)->HasAttributeByToken(token, attribute);
@@ -234,6 +235,7 @@ namespace metadata
 		{
 			return GetImage(image)->GetCustomAttributeDataRange(token);
 		}
+#endif
 
 		static bool IsImplementedByInterpreter(MethodInfo* method)
 		{

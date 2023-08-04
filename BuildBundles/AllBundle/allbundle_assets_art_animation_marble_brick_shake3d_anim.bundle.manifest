@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2583257902
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d5cf7a6a33ba88d1d28aec6c2d8d7089
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c33d3594fb840798e3bd468c6c9d34d3
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Animation/Marble/Brick/Shake3D.anim
+Dependencies: []

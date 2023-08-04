@@ -66,7 +66,7 @@ public class Init : MonoBehaviour
         Dictionary<string, bool> updatePackageBundle = new Dictionary<string, bool>()
         {
             {AssetComponentConfig.DefaultBundlePackageName, false},
-            {"LocalBundles", false},
+            //{"LocalBundles", false},
             //{"Main", false},
             //{"APK", false},
         };
@@ -115,7 +115,7 @@ public class Init : MonoBehaviour
     private async ETTask InitializePackage()
     {
         await AssetComponent.Initialize(AssetComponentConfig.DefaultBundlePackageName);
-        await AssetComponent.Initialize("LocalBundles");
+        //await AssetComponent.Initialize("LocalBundles");
         await InitUI();
         //await InitCode();
     }

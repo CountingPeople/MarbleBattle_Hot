@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2455527525
+CRC: 1772157652
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 53fd5dee503d9b6d4719f252b6132acb
+    Hash: 1708cf15479a187e1243478efeb05c1c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,6 +19,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Faster_Mesh.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_streammask_shadergraph.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_gradienttexture_967090_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_particle_motion_01_glow_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_streammask_shadergraph.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_gradienttexture_967090_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_particle_motion_01_glow_png.bundle

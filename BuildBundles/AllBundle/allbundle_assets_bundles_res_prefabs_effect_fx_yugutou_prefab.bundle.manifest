@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1440842039
+CRC: 3969629676
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6354bd99f905f8c4f0d05b8d1ef926b6
+    Hash: ada7778e30fa651ebcbe5c2071891b97
   TypeTreeHash:
     serializedVersion: 2
     Hash: aad49dfac325261ee527f6e6638da332
@@ -27,4 +27,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Effect/Fx_YuGuTou.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_yugutou_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_yugutou_mat.bundle

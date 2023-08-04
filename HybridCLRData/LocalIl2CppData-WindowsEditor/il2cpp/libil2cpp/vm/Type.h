@@ -194,6 +194,7 @@ namespace vm
         bool ParseByRefModifiersOptional();
 
         static bool ParseVersion(const std::string& version, uint16_t& major, uint16_t& minor, uint16_t& build, uint16_t& revision);
+        static void AssignSkipEscapeSymbol(std::string& s, std::string::const_iterator begin, std::string::const_iterator end);
 
         TypeNameParseInfo &_info;
 
@@ -228,6 +229,7 @@ namespace vm
         static bool GenericInstIsValuetype(const Il2CppType* type);
         static bool HasVariableRuntimeSizeWhenFullyShared(const Il2CppType* type);
 
+        static bool IsArray(const Il2CppType *type);
         static bool IsEnum(const Il2CppType *type);
         static bool IsValueType(const Il2CppType *type);
         static bool IsPointerType(const Il2CppType *type);

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1026000944
+CRC: 936076297
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e7e6f4854b427d1f742a6bd81d648778
+    Hash: 8e4592502e91ac25bc94c6c79bd2a9c8
   TypeTreeHash:
     serializedVersion: 2
     Hash: 87b0bba9d18ffc75f60c50b410bd4a4e
@@ -15,5 +15,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Marble.shadergraph
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marble_1_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_marble_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marble_1_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_marble_png.bundle

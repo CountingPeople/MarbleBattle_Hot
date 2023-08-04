@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3093114815
+CRC: 3727304073
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3ebe92e7720b5690d7b304cb5a823cde
+    Hash: 0a95e5c2d01719b265a8095a578455bc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/MarbleLine.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_stream_shadergraph.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline2_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_stream_shadergraph.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_marbleline2_png.bundle

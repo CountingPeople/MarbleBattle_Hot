@@ -13,6 +13,7 @@
 #include "vm/Exception.h"
 #include "vm/Thread.h"
 #include "vm/Runtime.h"
+#include "vm/Reflection.h"
 #include "metadata/GenericMetadata.h"
 #if HYBRIDCLR_UNITY_2020_OR_NEW
 #include "vm-utils/icalls/mscorlib/System.Threading/Interlocked.h"
@@ -39,7 +40,7 @@ namespace interpreter
 
 #pragma region memory
 
-#define LOCAL_ALLOC(size) interpFrameGroup.AllocLoc(size)
+#define LOCAL_ALLOC(size) interpFrameGroup.AllocLoc(size, imi->initLocals)
 
 #pragma endregion
 
@@ -292,82 +293,112 @@ namespace interpreter
 
 	inline bool CheckConvertOverflow_f4_i1(float x)
 	{
-		return ((x < INT8_MIN) || (x > INT8_MAX)) || isnan(x);
+		return x < INT8_MIN || x > INT8_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f4_u1(float x)
 	{
-		return truncf(x) < 0 || truncf(x) > UINT8_MAX || isnan(x);
+		return x < 0 || x > UINT8_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f4_i2(float x)
 	{
-		return truncf(x) < INT16_MIN || truncf(x) > INT16_MAX || isnan(x);
+		return x < INT16_MIN || x > INT16_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f4_u2(float x)
 	{
-		return truncf(x) < 0 || truncf(x) > UINT16_MAX || isnan(x);
+		return x < 0 || x > UINT16_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f4_i4(float x)
 	{
-		return truncf(x) < INT32_MIN || truncf(x) > INT32_MAX || isnan(x);
+		if (isnan(x))
+		{
+			return true;
+		}
+		float y = truncf(x);
+		return y != (int32_t)x;
 	}
 
 	inline bool CheckConvertOverflow_f4_u4(float x)
 	{
-		return truncf(x) < 0 || truncf(x) > UINT32_MAX || isnan(x);
+		if (isnan(x) || x < 0)
+		{
+			return true;
+		}
+		float y = truncf(x);
+		return y != (uint32_t)x;
 	}
 
 	inline bool CheckConvertOverflow_f4_i8(float x)
 	{
-		return truncf(x) < INT64_MIN || truncf(x) > INT64_MAX || isnan(x);
+		if (isnan(x))
+		{
+			return true;
+		}
+		float y = truncf(x);
+		return y != (int64_t)x;
 	}
 
 	inline bool CheckConvertOverflow_f4_u8(float x)
 	{
-		return truncf(x) < 0 || truncf(x) > UINT64_MAX || isnan(x);
+		if (isnan(x) || x < 0)
+		{
+			return true;
+		}
+		float y = truncf(x);
+		return y != (uint64_t)x;
 	}
 
 	inline bool CheckConvertOverflow_f8_i1(double x)
 	{
-		return ((x < INT8_MIN) || (x > INT8_MAX)) || isnan(x);
+		return x < INT8_MIN || x > INT8_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_u1(double x)
 	{
-		return trunc(x) < 0 || trunc(x) > UINT8_MAX || isnan(x);
+		return x < 0 || x > UINT8_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_i2(double x)
 	{
-		return trunc(x) < INT16_MIN || trunc(x) > INT16_MAX || isnan(x);
+		return x < INT16_MIN || x > INT16_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_u2(double x)
 	{
-		return trunc(x) < 0 || trunc(x) > UINT16_MAX || isnan(x);
+		return x < 0 || x > UINT16_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_i4(double x)
 	{
-		return trunc(x) < INT32_MIN || trunc(x) > INT32_MAX || isnan(x);
+		return x < INT32_MIN || x > INT32_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_u4(double x)
 	{
-		return trunc(x) < 0 || trunc(x) > UINT32_MAX || isnan(x);
+		return x < 0 || x > UINT32_MAX || isnan(x);
 	}
 
 	inline bool CheckConvertOverflow_f8_i8(double x)
 	{
-		return trunc(x) < INT64_MIN || trunc(x) > INT64_MAX || isnan(x);
+		if (isnan(x))
+		{
+			return true;
+		}
+		double y = trunc(x);
+		return y != (int64_t)x;
 	}
 
 	inline bool CheckConvertOverflow_f8_u8(double x)
 	{
-		return trunc(x) < 0 || trunc(x) > UINT64_MAX || isnan(x);
+		if (isnan(x) || x < 0)
+		{
+			return true;
+		}
+		double y = trunc(x);
+		return y != (uint64_t)x;
 	}
 
 	inline int32_t HiDiv(int32_t a, int32_t b)
@@ -1269,7 +1300,7 @@ namespace interpreter
 
 inline void InvokeSingleDelegate(uint16_t invokeParamCount, const MethodInfo * method, Il2CppObject * obj, Managed2NativeCallMethod staticM2NMethod, Managed2NativeCallMethod instanceM2NMethod, uint16_t * argIdxs, StackObject * localVarBase, void* ret)
 {
-	if (!InterpreterModule::HasImplementNative2Managed(method))
+	if (!InterpreterModule::HasImplementCallNative2Managed(method))
 	{
 		instanceM2NMethod = staticM2NMethod = InterpreterModule::Managed2NativeCallByReflectionInvoke;
 	}
@@ -1479,7 +1510,6 @@ while (true) \
 #define THROW_EX(_ex_, _firstHandlerIndex_) { \
 	Il2CppException* ex = _ex_; \
 	CHECK_NOT_NULL_THROW(ex); \
-	il2cpp::vm::Exception::Raise(ex, const_cast<MethodInfo*>(imi->method)); \
 	PREPARE_EXCEPTION(ex, _firstHandlerIndex_); \
 	FIND_NEXT_EX_HANDLER_OR_UNWIND(); \
 }
@@ -1487,20 +1517,6 @@ while (true) \
 	ExceptionFlowInfo* curExFlow = frame->GetCurExFlow(); \
 	IL2CPP_ASSERT(curExFlow->exFlowType == ExceptionFlowType::Catch); \
 	il2cpp::vm::Exception::Raise(curExFlow->ex, const_cast<MethodInfo*>(imi->method)); \
-}
-
-#define POP_CATCH_HANDLERS(leaveTarget)\
-{ \
-	for (ExceptionFlowInfo* prevExFlow; (prevExFlow = frame->GetPrevExFlow()) && prevExFlow->exFlowType == ExceptionFlowType::Catch ;) { \
-			InterpExceptionClause* prevIec = imi->exClauses[prevExFlow->nextExClauseIndex - 1]; \
-			if (!(prevIec->handlerBeginOffset <= leaveTarget && leaveTarget < prevIec->handlerEndOffset)) {	\
-					PopPrevExceptionFlowInfo(frame, nullptr); \
-			} \
-			else \
-			{ \
-				break; \
-			} \
-	}\
 }
 
 #define CONTINUE_NEXT_FINALLY() { \
@@ -1540,15 +1556,43 @@ ip = ipBase + efi->leaveTarget; \
 PopCurExceptionFlowInfo(frame); \
 }
 
+#define POP_PREV_CATCH_HANDLERS(leaveTarget)\
+{ \
+	for (ExceptionFlowInfo* prevExFlow; (prevExFlow = frame->GetPrevExFlow()) && prevExFlow->exFlowType == ExceptionFlowType::Catch ;) { \
+			InterpExceptionClause* prevIec = imi->exClauses[prevExFlow->nextExClauseIndex - 1]; \
+			if (!(prevIec->handlerBeginOffset <= leaveTarget && leaveTarget < prevIec->handlerEndOffset)) {	\
+					PopPrevExceptionFlowInfo(frame, nullptr); \
+			} \
+			else \
+			{ \
+				break; \
+			} \
+	}\
+}
+
 #define LEAVE_EX(target, firstHandlerIndex)  { \
 	PushExceptionFlowInfo(frame, machine, {ExceptionFlowType::Leave, (int32_t)(ip - ipBase), nullptr, firstHandlerIndex + 1, target}); \
 	InterpExceptionClause* iec = imi->exClauses[firstHandlerIndex]; \
-	POP_CATCH_HANDLERS(target); \
+	POP_PREV_CATCH_HANDLERS(target); \
 	ip = ipBase + iec->handlerBeginOffset; \
 }
 
+#define POP_CUR_CATCH_HANDLERS(leaveTarget)\
+{ \
+	for (ExceptionFlowInfo* prevExFlow; (prevExFlow = frame->GetCurExFlow()) && prevExFlow->exFlowType == ExceptionFlowType::Catch ;) { \
+			InterpExceptionClause* prevIec = imi->exClauses[prevExFlow->nextExClauseIndex - 1]; \
+			if (!(prevIec->handlerBeginOffset <= leaveTarget && leaveTarget < prevIec->handlerEndOffset)) {	\
+					PopCurExceptionFlowInfo(frame); \
+			} \
+			else \
+			{ \
+				break; \
+			} \
+	}\
+}
+
 #define LEAVE_EX_DIRECTLY(target)  { \
-	POP_CATCH_HANDLERS(target); \
+	POP_CUR_CATCH_HANDLERS(target); \
 	ip = ipBase + target; \
 }
 
@@ -10942,7 +10986,7 @@ else \
 					uint16_t __obj = *(uint16_t*)(ip + 2);
 					uint16_t __x = *(uint16_t*)(ip + 4);
 					uint16_t __y = *(uint16_t*)(ip + 6);
-				    *(HtVector2f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y))};
+				    *(HtVector2f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y))};
 				    ip += 8;
 				    continue;
 				}
@@ -10951,7 +10995,7 @@ else \
 					uint16_t __obj = *(uint16_t*)(ip + 2);
 					uint16_t __x = *(uint16_t*)(ip + 4);
 					uint16_t __y = *(uint16_t*)(ip + 6);
-				    *(HtVector3f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0};
+				    *(HtVector3f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0};
 				    ip += 8;
 				    continue;
 				}
@@ -10961,7 +11005,7 @@ else \
 					uint16_t __x = *(uint16_t*)(ip + 4);
 					uint16_t __y = *(uint16_t*)(ip + 6);
 					uint16_t __z = *(uint16_t*)(ip + 8);
-				    *(HtVector3f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z))};
+				    *(HtVector3f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z))};
 				    ip += 16;
 				    continue;
 				}
@@ -10970,7 +11014,7 @@ else \
 					uint16_t __obj = *(uint16_t*)(ip + 2);
 					uint16_t __x = *(uint16_t*)(ip + 4);
 					uint16_t __y = *(uint16_t*)(ip + 6);
-				    *(HtVector4f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0, 0};
+				    *(HtVector4f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0, 0};
 				    ip += 8;
 				    continue;
 				}
@@ -10980,11 +11024,69 @@ else \
 					uint16_t __x = *(uint16_t*)(ip + 4);
 					uint16_t __y = *(uint16_t*)(ip + 6);
 					uint16_t __z = *(uint16_t*)(ip + 8);
-				    *(HtVector4f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z)), 0};
+				    *(HtVector4f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z)), 0};
 				    ip += 16;
 				    continue;
 				}
 				case HiOpcodeEnum::NewVector4_4:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+					uint16_t __z = *(uint16_t*)(ip + 8);
+					uint16_t __w = *(uint16_t*)(ip + 10);
+				    *(HtVector4f*)(void*)(localVarBase + __obj) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z)), (*(float*)(localVarBase + __w))};
+				    ip += 16;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector2:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+				    *(HtVector2f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y))};
+				    ip += 8;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector3_2:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+				    *(HtVector3f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0};
+				    ip += 8;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector3_3:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+					uint16_t __z = *(uint16_t*)(ip + 8);
+				    *(HtVector3f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z))};
+				    ip += 16;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector4_2:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+				    *(HtVector4f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), 0, 0};
+				    ip += 8;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector4_3:
+				{
+					uint16_t __obj = *(uint16_t*)(ip + 2);
+					uint16_t __x = *(uint16_t*)(ip + 4);
+					uint16_t __y = *(uint16_t*)(ip + 6);
+					uint16_t __z = *(uint16_t*)(ip + 8);
+				    *(HtVector4f*)(*(void**)(localVarBase + __obj)) = {(*(float*)(localVarBase + __x)), (*(float*)(localVarBase + __y)), (*(float*)(localVarBase + __z)), 0};
+				    ip += 16;
+				    continue;
+				}
+				case HiOpcodeEnum::CtorVector4_4:
 				{
 					uint16_t __obj = *(uint16_t*)(ip + 2);
 					uint16_t __x = *(uint16_t*)(ip + 4);
@@ -11067,6 +11169,13 @@ else \
 					uint16_t __src = *(uint16_t*)(ip + 4);
 					uint16_t __srcType = *(uint16_t*)(ip + 6);
 				    (*(int32_t*)(localVarBase + __dst)) =  UnsafeEnumCast((void*)(localVarBase + __src), __srcType);
+				    ip += 8;
+				    continue;
+				}
+				case HiOpcodeEnum::AssemblyGetExecutingAssembly:
+				{
+					uint16_t __ret = *(uint16_t*)(ip + 2);
+				    (*(Il2CppObject**)(localVarBase + __ret)) = (Il2CppObject*)il2cpp::vm::Reflection::GetAssemblyObject(imi->method->klass->image->assembly);
 				    ip += 8;
 				    continue;
 				}

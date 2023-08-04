@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1282181863
+CRC: 2559690735
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: be75c63191ef02950f30e19903ca1e18
+    Hash: b9fdcd18e71838cb8589ad3a2b8155cc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 08f597f89f45fa40c65bda10a9ee7fe8
@@ -30,5 +30,4 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Texture/Battle/shibing_rock.psb
-Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+Dependencies: []

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 412397372
+CRC: 2412856539
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 36e3754b7f44aff8b1b8697e6b0b6cdb
+    Hash: 0dcb681c91cd15b5973167faa0995970
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,4 +19,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_Brick.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

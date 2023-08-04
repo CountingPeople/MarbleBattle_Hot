@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4202139204
+CRC: 581689653
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ed06eb927e8ad963579610478e8d7a80
+    Hash: 7c3b59fe42fd61b9ecac401a949db1f8
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/GuideLine.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_stream_shadergraph.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_guideline_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_stream_shadergraph.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_guideline_png.bundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2949429129
+CRC: 4050001277
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3badaa0693121b408225911eb8164d27
+    Hash: 97664998d1af30e96ac94fe004a958ca
   TypeTreeHash:
     serializedVersion: 2
     Hash: 071cfd7cbbe91ffa08fa7d9635235916
@@ -33,6 +33,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Battle/weapon_yuci.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_yugutou_prefab.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_yuci_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_prefabs_effect_fx_yugutou_prefab.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_battle_weapon_yuci_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

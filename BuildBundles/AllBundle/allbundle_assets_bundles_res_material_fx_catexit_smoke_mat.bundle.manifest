@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 445349822
+CRC: 1867766043
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d437d951b59e283357308e6f38d5ed9b
+    Hash: be7d8cd1f5167e92b12f52d06d61e857
   TypeTreeHash:
     serializedVersion: 2
     Hash: 16c36b7b3350fad15821c42f96c32ccb
@@ -19,5 +19,5 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Material/Fx_CatExit_Smoke.mat
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(2798)_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_fx_kt_(2798)_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

@@ -28,7 +28,9 @@ namespace metadata
 		uint32_t staticFieldsSize;
 		uint32_t threadStaticFieldsSize;
 		uint8_t alignment;
+#if !HYBRIDCLR_UNITY_2022_OR_NEW
 		uint8_t naturalAlignment;
+#endif
 	};
 
 	struct SizeAndAlignment
@@ -75,7 +77,7 @@ namespace metadata
 		void CalcClassNotStaticFields(const Il2CppType* type);
 		void CalcClassStaticFields(const Il2CppType* type);
 
-		void LayoutFields(int32_t parentSize, int32_t actualParentSize, int32_t parentAlignment, uint8_t packing, std::vector<FieldLayout*>& fields, FieldLayoutData& data);
+		void LayoutFields(int32_t actualParentSize, int32_t parentAlignment, uint8_t packing, std::vector<FieldLayout*>& fields, FieldLayoutData& data);
 		SizeAndAlignment GetTypeSizeAndAlignment(const Il2CppType* type);
 	};
 }

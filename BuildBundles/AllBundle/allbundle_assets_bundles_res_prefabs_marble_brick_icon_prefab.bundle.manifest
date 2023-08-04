@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3035584060
+CRC: 521703227
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3b8e1e2cef7a7ba47afb98d692f8f891
+    Hash: 2a351527c3ade8ab662b41b4ee94fb5c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d9b4cc816f281a1f84e4c0efb882397e
+    Hash: e295ad315d41895437b433460837d892
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -47,7 +47,7 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Bundles/Res/Prefabs/Marble/Brick_icon.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brickicon_cat_nainiu_png.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brick_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_texture_marble_brickicon_cat_nainiu_png.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_thirdpard_textmesh_pro_resources_fonts_&_materials_liberationsans_sdf_asset.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

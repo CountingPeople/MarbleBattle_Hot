@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1013367459
+CRC: 2562941816
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 989da68f6fd5abc4ed868e3f5e4a7955
+    Hash: d4b2ce0848d3258fd8a279f2b28628b0
   TypeTreeHash:
     serializedVersion: 2
     Hash: c7f8408b218f83b216f5b593e2363165
@@ -23,4 +23,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Effect/Fx_YuMao.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_yumao_mat.bundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/allbundle_assets_bundles_res_material_fx_yumao_mat.bundle

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3602069100
+CRC: 4094388836
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 02edf9453497efb2bf08d13ea01a6167
+    Hash: 4e2b55102da447953842fde1f6c702cc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 333e135173ce2edb8d072425abacff21
@@ -23,4 +23,4 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Bundles/Res/Prefabs/Effect/Fx_MarbleTrail_Simple.prefab
 Dependencies:
-- E:/project_gitee_down/MarbleBattle/BuildBundles/AllBundle/shader_allbundle
+- E:/project_unity_framework/game_006/MarbleBattle_Hot/BuildBundles/AllBundle/shader_allbundle

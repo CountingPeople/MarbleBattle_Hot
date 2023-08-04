@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4091051505
+CRC: 3302281310
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e12bd3bb9bb76da3bb5613a921d00001
+    Hash: 5eac2f32b96c36694ecf16fa0deb052b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 39b0ff18c9b82410a69025f150d4a517
@@ -27,5 +27,5 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Bundles/Scence/Lanuch.unity
+- Assets/Bundles/Scence/lanuch.unity
 Dependencies: []
